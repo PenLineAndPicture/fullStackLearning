@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CGV</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script>
+        /* 형식 : function 함수명(){구현코드} */
+        function 멍멍(먹이) {
+            /* alert("왈왈!!" + 먹이);*/
+
+            // 전체문서: document
+            // 하위문서: .(문서)
+            // = : 우측값이 좌측값으로 들어감을 뜻함
+
+            document.getElementById("ifr").src = "https://www.youtube.com/embed/" + 먹이 + "?autoplay=1&controls=0";
+        }
+
+        /* 호출 : 함수명()*/
+    </script>
+</head>
+
+<body>
+   <div id="blackcover">  
+   </div>
+    <!--[ html5 - 레이아웃 요소들 ]
+    
+    [Sementic tag]
+    - 의미가 있는 요소
+    - 검색 엔진이 데이터를 수지할 때(크롤링), 시멘틱 요소호 분석이 가능하다.
+    좀더 분석적이고 정교한 내용 분류를 해서 검색 내용이 구체적으로 될 수 있다.
+    
+    
+    <header> -문서 또는 섹션의 헤더를 정의합니다.
+    <nav> -탐색 링크 세트 정의
+    <section> -문서의 섹션을 정의
+    <article> -독립적이고 독립적 인 콘텐츠 정의
+    <aside> -콘텐츠 이외의 콘텐츠 정의 (예 : 사이드 바)
+    <footer> -문서 또는 섹션의 바닥 글을 정의합니다.
+    <details> -사용자가 필요에 따라 열고 닫을 수있는 추가 세부 정보를 정의합니다.
+    <summary>- <details>요소 의 제목을 정의합니다.
+    <hgroup> - h1~h6까지 머릿글 태그를 묶어주는 컨텐츠를 정의
+    <main> 문서의 중요 컨텐츠를 정의(1번만 사용가능함, 다른 요소의 하위 요소로 사용불가.)
+    -->
+
+    <!-- A. 상단 -->
+    <header id="top" class="part">
+        <!--1. 로고-->
+        <h1 class="tit">Christmas Special Movies For Solo</h1>
+        <!--2. 전체메뉴-->
+        <nav class="gnb">
+            <ul>
+                <li>
+                    <a href="">특선 영화</a>
+                    <div class="smenu">
+                        <ol>
+                            <li>
+                                <a href="">순위 차트</a>
+                            </li>
+                            <li>
+                                <a href="">HD 트레일러</a>
+                            </li>
+                            <li>
+                                <a href="">영화 탐색</a>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li>
+                    <a href="">예매</a>
+                    <div class="smenu">
+                        <ol>
+                            <li>
+                                <a href="">빠른 예매</a>
+                            </li>
+                            <li>
+                                <a href="">상영시간표</a>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li>
+                    <a href="">극장</a>
+                    <div class="smenu">
+                        <ol>
+                            <li>
+                                <a href="">CGV 극장</a>
+                            </li>
+                            <li>
+                                <a href="">특별관</a>
+                            </li>
+                            <li>
+                                <a href="" class="vip">Club 서비스</a>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li>
+                    <a href="">이벤트&amp;컬쳐</a>
+                    <div class="smenu">
+                        <ol>
+                            <li>
+                                <a href="">이벤트샵</a>
+                            </li>
+                            <li>
+                                <a href="">기프트샵</a>
+                            </li>
+                            <li>
+                                <a href="">매거진</a>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!--
+        
+        &amp = "&"
+        &li = "<"
+        &gt = ">"
+        &nbsp = " "
+        그밖에는 문자표에서 선택하여 넣는 방법도 있음.
+        
+        -->
+
+    </header>
+
+    <!-- B. 메인 -->
+    <main id="cont" class="part">
+        <!--3. 스크린-->
+        <div id="screen">
+            <iframe id="ifr" width="100%" height="100%" src="https://www.youtube.com/embed/uueyn6GqN3E?autoplay=1&amp;mute=1" controls=0 muted="muted"></iframe>
+
+            <!--
+                src: 불러올 페이지 경로
+                https://www.youtube.com/embed/동영상ID?autoplay=1
+                
+                allow="autoplay" 써줘야 자동재생
+                
+                [자동재생 제한 사항]
+                - 소리가 나는 경우 자동재생 불허용
+                - 사용자가 동영상을 클릭하여 요청했을때만 자동재생이 적용
+            -->
+
+        </div>
+        <!--4. 영화선택메뉴-->
+        <nav class="mlist">
+            <ul>
+                <li onclick="멍멍('HHXyQiCGgKw')">
+                    <img src="images/mov1.jpg" alt="도굴">
+                    <!--영화 정보-->
+                    <ol class="movtxt">
+                        <li>《도굴》</li>
+                        <li>이제훈, 조우진, 신혜선</li>
+                        <li>범죄</li>
+                    </ol>
+                </li>
+                <li onclick="멍멍('AF4IzD6aVU4')">
+                    <img src="images/mov2.jpg" alt="노트북">
+                    <!--영화 정보-->
+                    <ol class="movtxt">
+                        <li>《노트북》</li>
+                        <li>라이언 고슬링,<br>레이첼 맥아담스</li>
+                        <li>멜로/로맨스</li>
+                    </ol>
+                </li>
+                <li onclick="멍멍('tvR7mbk65qk')">
+                    <img src="images/mov3.jpg" alt="위플래쉬">
+                    <!--영화 정보-->
+                    <ol class="movtxt">
+                        <li>《위플래쉬》</li>
+                        <li>마일즈 텔러, J.K. 시몬스</li>
+                        <li>드라마</li>
+                    </ol>
+                </li>
+                <li onclick="멍멍('8s1LEQSWnHo')">
+                    <img src="images/mov4.jpg" alt="코마">
+                    <!--영화 정보-->
+                    <ol class="movtxt">
+                        <li>《코마》</li>
+                        <li>리날 무하메토프,<br>리우보프 악세노바</li>
+                        <li>SF</li>
+                    </ol>
+                </li>
+                <li onclick="멍멍('5YU1EPmAgVo')">
+                    <img src="images/mov5.jpg" alt="바이올렛 에버가든">
+                    <!--영화 정보-->
+                    <ol class="movtxt">
+                        <li>《바이올렛 에버가든》</li>
+                        <li>이시카와 유이,<br>나미카와 다이스케</li>
+                        <li>애니메이션/드라마</li>
+                    </ol>
+                </li>
+                <li onclick="멍멍('knszdYunweE')">
+                    <img src="images/mov6.jpg" alt="마치다 군의 세계">
+                    <!--영화 정보-->
+                    <ol class="movtxt">
+                        <li>《마치다 군의 세계》</li>
+                        <li>호소다 카나타,<br>세키미즈 나기사</li>
+                        <li>멜로/로맨스</li>
+                    </ol>
+                </li>
+            </ul>
+        </nav>
+    </main>
+
+    <!-- C. 하단 -->
+    <footer id="info" class="part">
+        <address>
+            <img src="images/blogo.png" alt="하단 로고">
+            (04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)
+            대표이사 : 최병환사업자등록번호 : 104-81-45690통신판매업신고번호 : 2017-서울용산-0662 사업자정보확인
+            호스팅사업자 : CJ올리브네트웍스개인정보보호 책임자 : 이동현대표이메일 : cjcgvmaster@cj.netCGV고객센터 : 1544-1122
+        </address>
+        <ul class="sns">
+            <li>
+                <a href="https://www.facebook.com/CJCGV" target="_blank">
+                    <span>페이스북 바로가기</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/cj_cgv" target="_blank">
+                    <span>트위터 바로가기</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/cgv_korea/" target="_blank">
+                    <span>인스타그램 바로가기</span>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+</body></html>

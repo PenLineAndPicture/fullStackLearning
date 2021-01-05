@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>월화드라마</title>
+</head>
+<style>
+    a {
+        text-decoration: none;
+    }
+    
+    td>strong:nth-child(1):hover {
+        background-color: pink;
+    }
+    
+    table {
+        margin: 30px auto;
+        border: 7px solid #ccc;
+    }
+
+    td {
+        padding: 10px;
+        line-height: 35px;
+    }
+
+    .heart {
+        color: red;
+        font-size: 20px;
+    }
+
+    .plus {
+        color: #22bd49;
+        font-size: 23px;
+    }
+    
+    button {
+        margin-top: 15px;
+    }
+    
+    .num {
+        color: red;
+    }
+    
+    .broadcast {
+        color: blue;
+    }
+
+</style>
+
+<body>
+    <!--1. 상단 부분-->
+    <div style="text-align: center;">
+        <!--1-1. 타이틀-->
+        <h1>최신 드라마 - 월화드라마</h1>
+        <!--1-2. 메뉴-->
+        <h2>
+            <a href="drama1.html">월화드라마</a> |
+            <a href="drama2.html">수목드라마</a> | 
+            <a href="drama3.html">주말드라마</a>
+        </h2>
+    </div>
+
+    <!--2. 컨텐츠-->
+    <div>
+        <!--드라마 테이블-->
+        <!--
+        2행 4열
+       -->
+        <table>
+            <tr>
+                <td><a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&pkid=57&os=11820031&query=%EC%B2%AD%EC%B6%98%EA%B8%B0%EB%A1%9D" alt="청춘기록"><img src="images/d1.jpg"></a></td>
+                <td><strong>청춘기록</strong> <br>
+                    <a href="http://tvn.tving.com/tvn" target="_blank" class="broadcast">tvN</a> (월, 화) 오후 09:00 <br>
+                    <span class="num">7.8%</span> 닐슨코리아 (10.20.) <br>
+                    <button>
+                        <span class="plus">+ </span><strong>구독</strong> 41,607<span class="heart"> ♥</span>
+                    </button>
+                </td>
+                <td><a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&pkid=57&os=13864619&query=18%20%EC%96%B4%EA%B2%8C%EC%9D%B8" alt="어게인"><img src="images/d2.jpg"></a></td>
+                <td><strong>18 어게인</strong> <br>
+                    <a href="http://jtbc.joins.com/" target="_blank" class="broadcast">JTBC</a> (월, 화) 오후 09:30 <br>
+                    <span class="num">3.2%</span> 닐슨코리아 (10.20.) <br>
+                    <button>
+                        <span class="plus">+ </span><strong>구독</strong> 27,511<span class="heart"> ♥</span>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td><a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&pkid=57&os=14286462&query=%EC%A2%80%EB%B9%84%ED%83%90%EC%A0%95" alt="좀비탐정"><img src="images/d3.jpg"></a></td>
+                <td><strong>좀비탐정</strong> <br>
+                    <a href="http://www.kbs.co.kr/" target="_blank" class="broadcast">KBS2</a> (월, 화) 오후 09:30 <br>
+                    <span class="num">2.6%</span> 닐슨코리아 (10.20.) <br>
+                    <button><span class="plus">+ </span><strong>구독</strong> 6,890<span class="heart"> ♥</span>
+                    </button>
+                </td>
+                <td><a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&pkid=57&os=14381033&query=%EB%82%98%EC%9D%98%20%EC%9C%84%ED%97%98%ED%95%9C%20%EC%95%84%EB%82%B4" alt="너의 위험한 아내"><img src="images/d4.jpg"></a></td>
+                <td><strong>나의 위험한 아내</strong> <br>
+                    <a href="https://www.mbn.co.kr/" target="_blank" class="broadcast">MBN</a> (월, 화) 오후 11:00 <br>
+                    <span class="num">2.4%</span> 닐슨코리아 (10.20.) <br>
+                    <button><span class="plus">+ </span>
+                        <strong>구독</strong> 2,883<span class="heart"> ♥</span>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

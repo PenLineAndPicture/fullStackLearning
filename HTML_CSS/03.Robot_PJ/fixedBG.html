@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Fixed Background</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&display=swap');
+        @import url('https://fonts.googleapis.com/css?family=Cute+Font&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');
+
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            /*특히 높이값을 100%로 설정해야 직계자식요소의 높이값 %가 적용될 수 있다.
+              body의 높이값 100% = 보이는 화면의 높이*/
+        }
+
+        .page {
+            width: 100%;
+            /*윈도우 크기의 너비 높이만큼 크기를 갖는다.*/
+            height: 100%;
+            /*body 세팅 기준*/
+            background-repeat: no-repeat;
+            /*배경은 반복없음*/
+            background-attachment: fixed;
+            /*배경 스크롤에 상관없이 고정*/
+            background-position: center;
+            background-size: cover;
+        }
+
+        /*각 page클래스는 div로 블록레벨
+        각각 width와 height를 100%(윈도우의 너비, 높이)만큼 가진다.
+        
+        */
+
+
+
+
+        .tit {
+            position: fixed;
+            top: 50px;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            /*fixed나 absolute는 너비 미지정 시 content와 크기를 같게 만든다. 따라서 text-aling: center를 쓰려면, 크기를 100%로 늘려준다.*/
+            width: 100%;
+            font-family: "Black And White Picture";
+            font-size: 50px;
+            color: #fff;
+            text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000;
+        }
+
+
+        ul#menu {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #menu li {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            font: bold 25px / 100px "맑은 고딕", arial;
+        }
+
+        #menu a {
+            text-decoration: none;
+            color: white;
+            text-shadow: 2px 2px 1px #000;
+
+            /*디자인 적용을 위한 세팅*/
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .logo {
+            height: 80px;
+            /*이미지는 가로나 세로 한쪽만 줄여도 자동 비율 유지*/
+            margin-top: 7px;
+        }
+
+        #menu li:first-child {
+            top: 0;
+            left: 0;
+            background-color: cornflowerblue;
+            border: 5px solid lightcoral;
+            border-radius: 0 0 20px 0;
+            /*왼쪽 위부터 시계방향*/
+        }
+
+        #menu li:nth-child(2) {
+            top: 0;
+            right: 0;
+            background-color: lightcoral;
+            border: 5px solid lemonchiffon;
+            border-radius: 0 0 0 20px;
+        }
+
+        #menu li:nth-child(3) {
+            bottom: 0;
+            left: 0;
+            background-color: lemonchiffon;
+            border: 5px solid darkseagreen;
+            border-radius: 0 20px 0 0;
+        }
+
+        #menu li:last-child {
+            bottom: 0;
+            right: 0;
+            background-color: darkseagreen;
+            border: 5px solid cornflowerblue;
+            border-radius: 20px 0 0 0;
+        }
+
+
+
+        #home {
+            background-image: url(images2/001.jpg);
+        }
+
+        #html {
+            background-image: url(images2/002.jpg);
+        }
+
+        #css {
+            background-image: url(images2/005.jpg);
+        }
+
+        #js {
+            background-image: url(images2/004.jpg);
+        }
+        
+        
+        
+        
+        #home .inbox2 {
+            outline: 2px solid lime;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 25%;
+            height: 25%;
+            margin: 0 auto;
+            padding: 0;
+            background-color: rgba(255, 255, 255, 0.5);
+            
+            position: absolute;
+            /*absolute 주면 inline요소는 block요소로 바뀐다.*/
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+            overflow: hidden;
+            
+        }
+        
+        #home .inbox2 .ftit {
+            position: relative;
+            font-family: "Black and White Picture";
+            font-size: 30px;
+            text-shadow: 2px 2px 3px black;
+            text-align: center;
+            
+            transition: all 1s ease-in-out;
+        }
+        
+        #home .inbox::after {
+            display: none;
+        }
+        
+        .tit1 {
+            color: coral;
+            top: 80px;
+            left: -50px;
+        }
+        
+        .tit2 {
+            color: cornflowerblue;
+            top: -40px;
+            left: -60px;
+        }
+        
+        .tit3 {
+            color: cornsilk;
+            top: -20px;
+            left: 50px;
+        }
+        
+        .tit4 {
+            color: darkolivegreen;
+            top: 40px;
+            left: 40px;
+        }
+        
+        #home .inbox2:hover .tit1,
+        #home .inbox2:hover .tit2,
+        #home .inbox2:hover .tit3,
+        #home .inbox2:hover .tit4 {
+            top: 0;
+            left: 0;
+        }
+        
+        
+        
+
+        .inbox {
+            outline: 2px solid lime;
+            position: relative;
+            top: 25%;
+            width: 70%;
+            height: 50%;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .inbox:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            width: 0;
+            height: 90%;
+            border-right: 3px dotted darkblue;
+        }
+
+        .inbox>div {
+            box-sizing: border-box;
+            width: 50%;
+            height: 100%;
+            float: left;
+            padding: 15px;
+            overflow-y: auto;
+        }
+
+        /*스크롤바 변경*/
+        .inbox>div::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .inbox>div::-webkit-scrollbar-thumb {
+            background: #666;
+            border-radius: 5px;
+        }
+
+        .inbox>div::-webkit-scrollbar-track {
+            background: #ddd;
+            border-radius: 5px;
+        }
+
+        
+        
+        /*벤더 프레픽스 - 브라우저 제작사 별 접두어*/
+        
+        /*    1. -webkit- : 크롬, 사파리 브라우저
+              2. -ms- : ms 익스플로러
+              3. -o- : 오페라 브라우저
+              4. -moz- : 모질라 파이어폭스
+              
+              *왜 쓰는가?
+              - 새로운 속성이 나오면 벤더사들 마다 브라우저를 새로 업데이트 함. 부분적으로 지원하는 버전의 경우, 이런 접두어를 사용하여
+                쓸 수 있게 함.
+        
+              ex) border-radius: 10px;
+                  -webkit-vorder-radius: 10px;
+                  중간 버전도 적용되도록 2가지 코딩을 함*/
+        
+        
+        
+        .inbox>div>h2 {
+            position: absolute;
+            color: white;
+            font-family: 'Cute Font';
+            background-color: darkmagenta;
+            padding: 10px;
+        }
+
+        .inbox>div>h3 {
+            font-family: 'Single Day', serif;
+            margin-top: 100px;
+        }
+
+        .inbox>div>ul {
+            font-family: 'Cute Font';
+            font-size: 20px;
+            line-height: 30px;
+            list-style: square;
+        }
+    </style>
+</head>
+
+
+
+
+
+
+<body>
+    <h1 class="tit">
+        <!--여러 개를 사용하기 위해-->
+        웹퍼블리싱 개발
+    </h1>
+
+    <ul id="menu">
+        <li>
+            <a href="#home">
+                <img src="images2/logo.png" alt="로고" class="logo">
+            </a>
+        </li>
+        <li>
+            <a href="#html">HTML</a>
+            <!--a href="#id명" 하면 클릭 시 해당 id가 있는 곳으로 이동-->
+        </li>
+        <li>
+            <a href="#css">CSS</a>
+        </li>
+        <li>
+            <a href="#js">Js</a>
+        </li>
+    </ul>
+
+
+    <div id="home" class="page">
+        <div class="inbox2">
+            <div class="tbox">
+                <div class="ftit tit1">웹퍼블리싱</div>
+                <div class="ftit tit2">HTML</div>
+                <div class="ftit tit3">CSS</div>
+                <div class="ftit tit4">JAVASCRIPT</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="html" class="page">
+        <div class="inbox">
+            <div>
+                <h2>HTML이란 무엇입니까?</h2>
+                <h3>HTML은 Hyper Text Markup Language를 나타냅니다.</h3>
+                <ul>
+                    <li>HTML은 웹 페이지를 만들기위한 표준 마크 업 언어입니다.</li>
+                    <li>HTML은 웹 페이지의 구조를 설명합니다.</li>
+                    <li>HTML은 일련의 요소로 구성됩니다.</li>
+                    <li>HTML 요소는 콘텐츠를 표시하는 방법을 브라우저에 알려줍니다.</li>
+                    <li>HTML 요소는 "이것은 제목입니다", "이것은 단락입니다", "이것은 링크입니다"등과 같은 콘텐츠 조각에 레이블을 지정합니다.</li>
+                </ul>
+            </div>
+            <div>
+                <h2>What is HTML?</h2>
+                <h3>HTML stands for Hyper Text Markup Language</h3>
+                <ul>
+                    <li>HTML is the standard markup language for creating Web pages</li>
+                    <li>HTML describes the structure of a Web page</li>
+                    <li>HTML consists of a series of elements</li>
+                    <li>HTML elements tell the browser how to display the content</li>
+                    <li>HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link", etc.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="css" class="page">
+        <div class="inbox">
+            <div>
+                <h2>CSS란 무엇입니까?</h2>
+                <h3>CSS는 Cascading Style Sheets를 의미합니다</h3>
+                <li>CSS는 HTML 요소가 화면, 종이 또는 기타 미디어에 표시되는 방법을 설명 합니다.</li>
+                <li>CSS 는 많은 작업을 절약합니다 . 한 번에 여러 웹 페이지의 레이아웃을 제어 할 수 있습니다.</li>
+                <li>외부 스타일 시트는 CSS 파일에 저장됩니다.</li>
+            </div>
+            <div>
+                <h2>What is CSS?</h2>
+                <h3>CSS stands for Cascading Style Sheets</h3>
+                <li>CSS describes how HTML elements are to be displayed on screen, paper, or in other media</li>
+                <li>CSS saves a lot of work. It can control the layout of multiple web pages all at once</li>
+                <li>External stylesheets are stored in CSS files</li>
+            </div>
+        </div>
+    </div>
+
+    <div id="js" class="page">
+        <div class="inbox">
+            <div>
+                <h2>javascript란 무엇입니까?</h2>
+                <h3>JavaScript는 세계에서 가장 널리 사용되는 프로그래밍 언어입니다.</h3>
+                <li>JavaScript는 웹의 프로그래밍 언어입니다.</li>
+                <li>JavaScript는 배우기 쉽습니다.</li>
+            </div>
+            <div>
+                <h2>What is Javascript?</h2>
+                <h3>JavaScript is the world's most popular programming language.</h3>
+                <li>JavaScript is the programming language of the Web.</li>
+                <li>JavaScript is easy to learn.</li>
+            </div>
+        </div>
+    </div>
+
+</body></html>

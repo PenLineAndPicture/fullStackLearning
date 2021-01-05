@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudo Class</title>
+    <style>
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        h3 {
+            width: 800px;
+            text-align: right;
+        }
+        
+        .part1 {
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+            width: 800px;
+            border: 1px solid dimgray;
+            border-radius: 20px;
+            text-align: center;
+        }
+        
+        .part2 {
+            width: 800px;
+        }
+        
+        .part1 li:nth-child(1) {
+            font-size: 40px;
+            font-family: "궁서";
+            color: red;
+        }
+        
+        .part1 li:nth-child(2) {
+            color:aqua;
+            font-weight: bold;
+        }
+        
+        .part1 li:nth-child(3) {
+            font-style: italic;
+            color: cadetblue;
+            text-decoration: underline;
+            text-decoration-color: red;
+        }
+        
+        .part1 li:nth-child(4) {
+            color: crimson;
+            font-size: 22px;
+            font-family: "돋움체";
+        }
+        
+        .part1 li:nth-child(6) {
+            color: orange;
+        }
+        
+        .part1 li:nth-child(4)~li {
+            font-size: 25px;
+            text-decoration: overline;
+            text-decoration-color: chartreuse;
+        }
+        
+        .part2 {
+            margin: 30px auto 0;
+            text-align: center;
+        }
+        
+        .part2 div:nth-of-type(2n) {
+            color: rebeccapurple;
+            font-family: "고딕체";
+            font-weight: bold;
+        }
+        
+        .part2 div:nth-of-type(4):hover {
+            color: gold;
+            font-weight: bold;
+            background-color: black;
+        }
+        
+        ul.part1 > li:first-child:hover {
+            font-size: 50px;
+        }
+        
+        h2 > a {
+            text-decoration: none;
+            color: pink;
+        }
+        
+        h2 > a:hover {
+            color: hotpink;
+        }
+        
+        div.part2 div:first-of-type {
+            font-size: 30px;
+            font-family: "궁서";
+            color: cornflowerblue;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1>CSS 가상 클래스</h1>
+
+    <h2><a href="">진달래꽃</a></h2>
+    <h3>김소월</h3>
+
+    <ul class="part1">
+        <li>나 보기가 역겨워</li>
+        <li>가실 때에는</li>
+        <li>말없이 고이 보내 드리오리다.</li>
+
+        <li>영변(寧邊)에 약산(藥山)</li>
+        <li>진달래꽃</li>
+        <li>아름 따다 가실 길에 뿌리오리다.</li>
+    </ul>
+
+    <div class="part2">
+        <div>가시는 걸음 걸음</div>
+        <em>놓인 그 꽃을</em>
+        <div>사뿐이 즈려 밟고 가시옵소서</div>
+
+        <div>나 보기가 역겨워</div>
+        <em>가실 때에는</em>
+        <div>죽어도 아니 눈물 흘리오리다.</div>
+    </div>
+</body></html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Box-sizing Practice</title>
+    <link rel="stylesheet" href="boxstyle.css">
+</head>
+
+<body>
+   <div class="depart">
+       <h1>white area is margin</h1>
+        <div class="margin-border" title="margin line">
+            <div id="b-box" title="margin: 20px, padding: 10px, border: 5px">
+                border-box(100*60)
+            </div>
+        </div>
+        <div class="margin-border" title="margin line">
+            <div id="c-box" title="margin: 20px, padding: 10px, border: 5px">
+                content-box(100*60)
+            </div>
+        </div>
+   </div>
+   <div id="apart"></div>
+   <div class="depart">
+       <div class="margin-border" title="margin line">
+            <div id="b-box-alt" title="margin: 20px, padding: 10px, border: 5px">
+                border-box(100*100)
+            </div>
+        </div>
+        <div class="margin-border" title="margin line">
+            <div id="c-box-alt" title="margin: 20px, padding: 10px, border: 5px">
+                content-box(100*100)
+            </div>
+        </div>
+        
+   </div>
+   <p><span>padding: 10px + border: 5px + width/height: 100px</span> = <span>margin: 0 + padding: 0 + width/height: 100px</span></p>
+   <br>
+   <p>결론: border-box와 content-box는 margin을 0을 주면 같다. content area의 계산은 border-box는 border의 크기도 고려한다. 
+   <br>border box는 <b>200px이라고 가로가 주어지면 내부로 경계면이 들어간다. 정확한 200px.</b> 반대로 content box는 <b>경계면이 외부로 나간다. 200px+경계면</b> 인 셈.</p>
+</body>
+
+</html>

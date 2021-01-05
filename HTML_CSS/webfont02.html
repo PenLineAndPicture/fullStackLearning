@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Font</title>
+    <style>
+       /*
+            [CDN 방식의 폰트 불러오기]
+            - content delivery network : 컨텐츠를 네트워크로 가져오는 것
+        
+            [호출 방식]
+            1. external : link 요소를 사용하여 html 상단에 넣기
+            <link rel="stylesheet" href="cdn주소">
+        
+            2. import 방식: @import를 사용하여 불러오기
+            @import url(cdn주소)
+        */
+        
+        /*Stalinist One*/
+        @import url('https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap');
+        /*Dancing Script*/
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+        /*Architects Daughter*/
+        @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+        
+        
+        .wf1 {
+            font-family: "Stalinist One";
+        }
+        .wf2 {
+            font-family: "Dancing Script";
+        }
+        .wf3 {
+            font-family: "Architects Daughter";
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 class="wf1">MINI MANI MO</h1>
+    <h1 class="wf2">MINI MANI MO</h1>
+    <h1 class="wf3">MINI MANI MO</h1>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>for문 연습2</title>
+    <style>
+        #cont {
+            margin: 0;
+            padding: 0;
+            border: 3px dashed blue;
+        }
+        
+        #cont img {
+            margin: 5px;
+            height: 80px;
+        }
+    </style>
+
+    <script>
+        /*
+            js는 코드를 만나자마자 실행
+            따라서 html body요소보다 위에 그려놓으면 html을 찾을 수 없으므로 에러메세지가 뜸
+
+            에러 없이 실행하려면 html로딩 후에 실행하게 하면 됨
+            
+            
+
+            1. 첫번째 방법(html 안에서 단 1번만 사용가능)
+            window.onload = funtion(){실행 코드};
+
+
+
+            2. 두번째 방법(여러번 사용가능)
+            window.addEventListener("load",function(){실행 코드});
+            
+            
+            
+            * addEventListener(이벤트, 함수)
+            -> 특정 이벤트와 함수를 연결해주는 JS 메서드
+            
+            * load
+            -> 로딩 후 발생하는 이벤트
+            
+            * function(){}
+            -> 익명함수
+            -> 실행되지 않고 코드를 가지고 있는 저장구역
+        */
+
+
+        ///////////////////////////// load 구역 /////////////////////////////
+        window.addEventListener("load", function() {
+                var tg = document.getElementById("cont");
+
+
+                for (var i=1; i<=50; i++) {     //for (시작구간; 조건; 증가량)
+                    //대입 연산자 사용
+                    tg.innerHTML += '<img src="images/dress/'+i+'.jpg" alt="여성의류 드레스" title="WD-001">';
+                }
+        });
+        ///////////////////////////// load 구역 /////////////////////////////
+    </script>
+
+</head>
+
+<body>
+    <div id="cont">
+        <img src="images/dress/1.jpg" alt="여성의류 드레스" title="WD-001">
+    </div>
+</body></html>

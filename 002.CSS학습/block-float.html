@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 블록 요소 float</title>
+    <style>
+        .bx {
+            width: 300px;
+            height: 200px;
+            border: ridge #ccb2ff;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            
+            float: left;
+        }
+        
+        .bx1 {
+            background-image: url(imgs/dc1.png);
+        }
+        .bx2 {
+            background-image: url(imgs/dc2.png);
+        }
+        .bx3 {
+            background-image: url(imgs/dc3.png);
+        }
+        .bx4 {
+            background-image: url(imgs/dc4.png);
+        }
+        
+        .wrap {
+            border: 5px dashed black;
+            margin: 5px 0 5px 0;
+        }
+        
+        .wrap::after {
+            display: block;
+            content: "";
+            clear: both;        /* clear 요소는 block 요소에만 작동한다 */
+        }
+        
+        /*단점
+        - overflow : 자식이 바깥으로 나가서 보여야할 경우, 고장남.
+        - 높이 강제설정: 강제설정이라 정적임.
+        - 가상요소 설정: 코딩이 길다?
+        */
+        
+    </style>
+</head>
+<body>
+   
+   <!--.bx.bx$*4 : 클래스가 2개인데 뒤에 $는 만들어진 개수만큼 번호가 증가-->
+    <div class="wrap">
+        <div class="bx bx1"></div>
+        <div class="bx bx2"></div>
+        <div class="bx bx3"></div>
+        <div class="bx bx4"></div>
+    </div>
+    
+     <div class="wrap">
+        <div class="bx bx1"></div>
+        <div class="bx bx2"></div>
+        <div class="bx bx3"></div>
+        <div class="bx bx4"></div>
+    </div>
+    
+     <div class="wrap">
+        <div class="bx bx1"></div>
+        <div class="bx bx2"></div>
+        <div class="bx bx3"></div>
+        <div class="bx bx4"></div>
+    </div>
+    
+</body>
+</html>

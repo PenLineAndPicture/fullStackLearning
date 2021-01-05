@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Width 100percent Grid System</title>
+    <link rel="stylesheet" href="css/gridSet.css">
+    <link rel="stylesheet" href="css/gridView.css">
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .page {
+            width: 100%;
+            height: 100%;
+            outline: 2px dashed red;
+        }
+
+        .ibx {
+            width: 1440px;
+            max-width: 90%;
+            margin: 0 auto;
+            outline: 2px dashed blue;
+
+        }
+
+        /* 화면을 채우는 .page 아래 .ibx 속박스 셋팅*/
+
+        .page .ibx {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+
+        }
+
+        .rbx::before {
+            content: "";
+            display: block;
+            padding-top: 35%;
+        }
+
+        .rbx>div {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+
+        /* 비율 유지 박스 하위의 파티션 박스(비율유지 박스의 크기에 맞춤) */
+        .rbx [class*="col-"] {
+            height: 70%;
+        }
+
+        /* 비율유지박스 타이틀 */
+        .rbx h2 {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            height: 30%;
+        }
+
+        
+        
+        /* 상단 */
+        #top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgb(255, 255, 255, 0.54);
+            z-index: 9999;
+        }
+        
+        .t1 {
+            height: 70px;
+            padding: 0;
+        }
+        
+        h1.logo {
+            width: 87px;
+            height: 70px;
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+        }
+        
+        .logo a {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-indent: -999px;
+        }
+        
+        .logo a::after {
+            position: absolute;
+            top: 0;
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: url(images/head_logo.png) no-repeat center 50%;
+        }
+
+
+        #cont1 {
+            background: url(images/newyorkCity.jpg) no-repeat top left/cover;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        #cont2 {
+            background: url(images/parisCity.jpg) no-repeat top left/cover;
+        }
+
+        #cont3 {
+            position: relative;
+            background: url(images/penguin.jpg) no-repeat top left/cover;
+        }
+
+        #cont3::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgb(255, 0, 0, 0.52);
+        }
+
+        #cont4 {
+            background: url(images/seashore.jpg) no-repeat top left/cover;
+        }
+
+        #cont5 {
+            background: url(images/seoulCity.jpg) no-repeat top left/cover;
+        }
+        
+        #cont6 {
+            background-color: cornflowerblue;
+        }
+        
+        
+        
+        
+        /* 하단 */
+        .i1 {
+            height: 65px;
+        }
+        
+        .i2 {
+            height: 60px;
+        }
+        
+        
+        
+        
+    </style>
+
+</head>
+
+<body>
+    <!--상단-->
+    <div id="top">
+        <header class="ibx clb top">
+            <div class="col-3 t1">
+                <h1 class="logo">
+                    <a href="">
+                        K-water
+                    </a>
+                </h1>
+            </div>
+            <div class="col-6 t1"></div>
+            <div class="col-3 t1"></div>
+        </header>
+    </div>
+    <!--컨텐츠 1-->
+    <div id="cont1" class="page">
+        <section class="ibx rbx cont1">
+            <div>
+
+            </div>
+        </section>
+    </div>
+    <!--컨텐츠 2-->
+    <div id="cont2" class="page">
+        <section class="ibx rbx cont2">
+            <div>
+                <h2>K-water</h2>
+                <div class="col-4"></div>
+                <div class="col-4"></div>
+                <div class="col-4"></div>
+            </div>
+        </section>
+    </div>
+    <!--컨텐츠 3-->
+    <div id="cont3" class="page">
+        <section class="ibx rbx cont3">
+            <div>
+                <h2>서비스</h2>
+                <div class="col-3"></div>
+                <div class="col-6"></div>
+                <div class="col-3"></div>
+            </div>
+        </section>
+    </div>
+    <!--컨텐츠 4-->
+    <div id="cont4" class="page">
+        <section class="ibx rbx cont4">
+            <div>
+                <h2>뉴스</h2>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+            </div>
+        </section>
+    </div>
+    <!--컨텐츠 5-->
+    <div id="cont5" class="page">
+        <section class="ibx rbx cont5">
+            <div>
+                <h2>문화</h2>
+                <div class="col-6"></div>
+                <div class="col-6"></div>
+            </div>
+        </section>
+    </div>
+    <!--컨텐츠 6-->
+    <div id="cont6" class="page">
+        <section class="ibx rbx cont6">
+            <div>
+                <h2>채용</h2>
+                <div class="col-4"></div>
+                <div class="col-4"></div>
+                <div class="col-4"></div>
+            </div>
+        </section>
+    </div>
+    <!--하단영역-->
+    <div id="bottom">
+        <footer class="ibx bottom">
+            <div class="col-6 i1"></div>
+            <div class="col-6 i1"></div>
+            <div class="col-8 i2"></div>
+            <div class="col-4 i2"></div>
+        </footer>
+    </div>
+</body></html>

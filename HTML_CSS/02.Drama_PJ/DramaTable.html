@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>한국 최신 드라마 리스트</title>
+    <style>
+        /*테이블 공통 디자인*/
+        .tbl {
+            font-family: "궁서체", "굴림";
+            font-size: 14px;
+            color: #222;
+            
+            /*표 사이 간 간극 없애기*/
+            border-collapse: collapse;
+        }
+        
+        #drama {
+            margin: 0 auto;
+            max-width: 700px;
+        }
+        
+        #drama td, #drama th {
+            padding: 5px, 10px;
+        }
+        
+        #drama tbody tr td {
+            border-bottom: 1px solid #ccc;
+            padding: 0 5px;
+            /*
+            border-width
+            border-style
+            border-color
+            
+            이걸 위와 같이 한번에 쓰는것*/
+        }
+        
+        #drama tbody tr:first-child td {
+            border-top: 2px solid black;
+        }
+        
+        #drama tbody tr:last-child td {
+            border-bottom: 2px solid black;
+        }
+        
+        #drama thead tr th {
+            border-top: 2px solid black;
+            background-color: #e0e0e0;
+        }
+        
+        #drama tbody tr:nth-child(even) {
+            background-color: #e8f5fc;
+        }
+        
+        #drama caption {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px 0;
+        }
+        
+        #drama tfoot tr td {
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        #drama tfoot tr td a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        div.gubun {
+            max-width: 500px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        
+        table#gubun {
+            border: 1px solid #ccc;
+            font-size: 12px;
+        }
+        
+        table#gubun td{
+            padding: 5px 7px;
+        }
+        
+        #gubun {
+            border: 1px solid #ccc;
+        }
+        
+        .gubun tr:first-child td:first-child {
+            border-right: 2px solid #ccc;
+        }
+        
+        .gubun tr:nth-child(2) td {
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[테이블 관련 요소]
+    1.table: 테이블 전체 부모
+    2.tr (table row): 테이블 라인
+    3.td (table data): 테이블 데이터
+        -thead에서는 주로 td 대신 th를 사용함(th는 기본 두꺼운 글자에 중앙정렬을 함)
+    ******************************
+    [추가요소]
+    4.caption: 테이블 제목
+    5.thead: 테이블 머릿부분
+    6.tbody: 테이블 중앙내용부분
+    7.tfoot: 테이블 하단부분-->
+
+    <table id="drama" class="tbl">
+        <caption>한국 최신 드라마 리스트</caption>
+        <thead>
+            <tr>
+                <!--머릿글은 th를 씀-->
+                <th>번호</th>
+                <th>드라마명</th>
+                <th>주연</th>
+                <th>제작자</th>
+                <th>구분</th>
+                <th>방영 시간</th>
+                <th>방영 부수</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <!--td 7개를 합치겠다-->
+                <td colspan="7">
+                    ◀ <a href="">1</a> | <a href="">2</a> | <a href="">3</a> | <a href="">4</a> | <a href="">5</a> | <a href="">6</a> | <a href="">7</a> | <a href="">8</a> | <a href="">9</a> | <a href="">10</a> ▶
+                </td>
+            </tr>
+        </tfoot>
+        <!--tbody는 일반테이블에 안써도 출력됨-->
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>써치</td>
+                <td>장동윤, 정수정</td>
+                <td>OCN</td>
+                <td>토,일</td>
+                <td>오후 10:30</td>
+                <td>10부작</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>나의 위험한 아내</td>
+                <td>김정은, 최원영</td>
+                <td>MBN</td>
+                <td>월,화</td>
+                <td>오후 11:00</td>
+                <td>10부작</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>앨리스</td>
+                <td>김희선, 주원</td>
+                <td>SBS</td>
+                <td>금,토</td>
+                <td>오후 10:00</td>
+                <td>16부작</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>나를 사랑한 스파이</td>
+                <td>장동윤, 정수정</td>
+                <td>OCN</td>
+                <td>토,일</td>
+                <td>오후 10:30</td>
+                <td>10부작</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>오! 삼광빌라!</td>
+                <td>장동윤, 정수정</td>
+                <td>OCN</td>
+                <td>토,일</td>
+                <td>오후 10:30</td>
+                <td>10부작</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>스타트업</td>
+                <td>장동윤, 정수정</td>
+                <td>OCN</td>
+                <td>토,일</td>
+                <td>오후 10:30</td>
+                <td>10부작</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>사생활</td>
+                <td>장동윤, 정수정</td>
+                <td>OCN</td>
+                <td>토,일</td>
+                <td>오후 10:30</td>
+                <td>10부작</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>찬란한 내 인생</td>
+                <td>장동윤, 정수정</td>
+                <td>OCN</td>
+                <td>토,일</td>
+                <td>오후 10:30</td>
+                <td>10부작</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>구미호뎐</td>
+                <td>장동윤, 정수정</td>
+                <td>OCN</td>
+                <td>토,일</td>
+                <td>오후 10:30</td>
+                <td>10부작</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>경우의 수</td>
+                <td>장동윤, 정수정</td>
+                <td>OCN</td>
+                <td>토,일</td>
+                <td>오후 10:30</td>
+                <td>10부작</td>
+            </tr>
+        </tbody>
+    </table>
+
+<div class="gubun">
+    <table id="gubun" class="tbl">
+        <tr>
+           <td rowspan="3">구분</td>
+            <td>월화드라마</td>
+        </tr>
+        <tr>
+            <td>수목드라마</td>
+        </tr>
+        <tr>
+            <td>주말드라마</td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+
+</body>
+
+</html>

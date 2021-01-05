@@ -1,0 +1,338 @@
+@charset="utf-8";
+ 
+@import url(reset.css);
+@import url(common.css);
+
+/*다른 파일 불러오기(랜더링 속도가 빨라짐)*/
+
+body {
+    background-color: #3067c9;
+}
+
+.cont {
+    position: relative;
+    width: 1000px;
+    height: 800px;
+    background-color: white;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#tit {
+    position: absolute;
+    top: 0;
+    right: -620px;
+    width: 620px;
+    height: 198px;
+    background: url(../images/title.png);
+    
+    animation: titAni 1s ease-in-out 1.5s forwards;
+}
+
+
+#man {
+    position: absolute;
+    top: 10px;
+    right: -90px;
+    
+    animation: showman 3s linear 6s forwards,
+        walk 0.7s linear infinite alternate;
+}
+
+
+#check {
+    position: absolute;
+    top: 0;
+    left: -383px;
+    width: 383px;
+    height: 345px;
+    background: url(../images/check.png);
+    
+    animation: check 1s ease-in-out 1s forwards;
+}
+
+#horse {
+    position: absolute;
+    bottom: 120%;
+    left: 0;
+    transform: rotate(-90deg);
+    
+    animation: tornado 4s ease-in 5s infinite;
+}
+
+#sea {
+    position: absolute;
+    bottom: -219px;
+    left: 0;
+    width: 1000px;
+    height: 219px;
+    background: url(../images/sea.png) no-repeat;
+    
+    animation: seaAni 1s ease-out 2s forwards,
+        /*중첩 애니메이션*/
+        updown 2s ease-in-out 3s infinite alternate;
+}
+
+#shark {
+    position: absolute;
+    height: 150px;
+    left: 110%;
+    bottom: -20px;
+    
+    animation: shark 10s ease-in-out 5s infinite;
+}
+
+#diary {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    margin-left: 15px;    /* 책갈피 공간 고려 */
+    
+    width: 834px;
+    height: 500px;
+    background: url(../images/diary.png) no-repeat;
+    
+    opacity: 0;
+    
+    animation: diaryAni 1.5s ease-out 3.5s forwards;
+}
+
+
+
+
+
+.pola1 {
+    position: absolute;
+    top: 45px;
+    left: 5px;
+    width: 223px;
+    height: 235px;
+    background: url(../images/pola1.png) no-repeat;
+    z-index: 1;
+}
+
+.pola1 img {
+    position: absolute;
+    display: none;
+    bottom: 0;
+    left: 130px;   
+}
+
+.pola2 {
+    position: absolute;
+    top: 40px;
+    left: 80px;
+    width: 210px;
+    height: 200px;
+    background: url(../images/pola2.png) no-repeat;
+}
+
+.pola2 img {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 150px;
+}
+
+.pola:hover img {
+    display: block;
+}
+
+.pola2:hover {
+    z-index: 2;
+}
+
+
+.schedule {
+    position: absolute;
+    bottom: 50px;
+    left: 60px;  
+}
+
+.schedule img:last-child {
+    position: absolute;
+    display: none;
+    top: 3px;
+    left: -4px;
+}
+
+.schedule:hover img:last-child {
+    display: block;
+}
+
+.post1 {
+    position: absolute;
+    top: 70px;
+    right: 140px;
+    z-index: 1;
+    transition: transform .4s;
+}
+
+.post1:hover {
+    transform: scale(1.2) rotate(-12deg);
+}
+
+.post2 {
+    position: absolute;
+    top: 55px;
+    right: 240px;
+    transition: transform .4s;
+}
+
+.post2:hover {
+    transform: scale(1.2);
+    z-index: 2;
+}
+
+.food {
+    position: absolute;
+    bottom: 40px;
+    right: 90px;
+}
+
+/* 이미지맵 클릭 시 포커스 아웃라인 없애기 - 크롬 브라우저*/
+area:focus {
+    outline: 0;
+}
+
+
+#boy {
+    position: fixed;
+    top: 20%;
+    left: 110%;
+    
+    animation: fly 20s ease-in-out 6s infinite;
+}
+
+
+
+
+
+
+/* 애니메이션 */
+
+@keyframes check {
+    to {
+        left: 0;
+    }
+}
+
+@keyframes titAni {
+    to {
+        right: 0;
+    }
+}
+
+@keyframes seaAni {
+    to {
+        bottom: 0;
+    }
+}
+
+@keyframes diaryAni {
+    to {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+/* 요구 동작: 바닥에서 등장 후 지속적으로 움직임 */
+@keyframes updown {
+    from {
+        bottom: 0;
+    }
+    to {
+        bottom: -10px;
+    }
+}
+
+
+@keyframes showman{
+    to {
+        right: 70px;
+    }
+}
+
+@keyframes walk {
+    from {
+        transform: rotate(10deg)
+    }
+    to {
+        transform: rotate(-10deg)
+    }
+}
+
+@keyframes shark {
+    0% {
+        left: 110%;
+    }
+    10% {
+        left: 60%;
+    }
+    40% {
+        left: 40%;
+    }
+    50% {
+        left: -50%;
+        transform: rotateY(0);    /* 회전 전까지는 붙잡아줘야 한다. */
+    }
+    /* 돌아오는 구간 */
+    51% {
+        left: -50%;
+        transform: rotateY(180deg);
+    }
+    60% {
+        left: 20%;
+    }
+    90% {
+        left: 50%;
+    }
+    100% {
+        left: 110%;
+        transform: rotateY(180deg);    /* 전환된 이미지폼을 끝까지 붙잡아준다. */
+    }
+}
+
+@keyframes tornado {
+    0% {
+        transform: rotateX(0);
+        bottom: 120%;
+    }
+    70% {
+        transform: rotateX(9600deg);
+        bottom: -20%;
+    }
+    71% {
+        transform: rotateX(9600deg);
+        bottom: -20%;
+    }
+    100% {
+        transform: rotateX(0);
+        bottom: 120%;
+    }
+}
+
+@keyframes fly {
+    0% {
+        top: 20%;
+        left: 110%;
+        transform: rotate(0);
+    }
+    30% {
+        top: 5%;
+        left: 0;
+        transform: rotate(180deg);
+    }
+    60% {
+        top: 80%;
+        left: 20%;
+        transform: rotate(270deg);
+    }
+    100% {
+        top: 40%;
+        left: 110%;
+        transform: rotate(360deg);
+    }
+}

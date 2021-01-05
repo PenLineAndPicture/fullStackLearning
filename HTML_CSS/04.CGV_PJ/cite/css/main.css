@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css?family=Cute+Font|Jua&display=swap');
+/*Merging(머징)*/
+
+@charset "utf-8";
+/*
+    @charset은 외부 css의 언어 인코딩 설정(필수)
+*/
+
+/*
+    font-family: 'Cute Font', cursive;
+    font-family: 'Jua', sans-serif;
+*/
+
+html, body, h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000;
+    color: white;
+}
+
+.tit {
+    height: 100%;
+    text-align: center;
+    font-family: 'Jua', sans-serif;
+    font-size: 40px;
+    line-height: 80px;
+    color: aquamarine;
+    text-shadow: 0 0 10px aquamarine;
+    background: url(../images/curtain.jpg) repeat-x;
+}
+
+.gnb {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.gnb ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /*outline: 3px solid red;*/
+}
+
+.gnb ul::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.gnb ul>li {
+    position: relative;
+    float: left;
+}
+
+.gnb ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Jua', sans-serif;
+    font-size: 16px;
+    margin: 3px 10px;
+}
+
+.gnb ul>li:hover .smenu {
+    display: block;
+}
+
+
+.smenu {
+    display: none;
+    position: absolute;
+    padding: 5px;
+    background: url(../images/bg_smenu.png) no-repeat center/cover;
+    left: 50%;
+    top: 30px;
+    transform: translate(-50%);            /*가로 중앙 이동*/
+}
+
+/* 가상요소로 삼각형 만들기 */
+.smenu::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 100%;
+    left: 43%;
+    border-bottom: 10px solid #2f2f2f;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    margin: 0 auto;
+}
+
+
+.smenu ol {
+    border: 2px solid #ccc;
+    margin: 0;
+    padding: 10px;
+    width: 110px;
+    list-style: none;
+}
+
+.gnb .smenu ol li a {
+    margin: 0;
+    font-size: 14px;
+}
+
+.gnb .smenu a:hover {
+    color: red;
+}
+
+.gnb .smenu a:hover::after {
+    content: " ☞";
+    float: right;
+    position: relative;        /* 현재 요소에서 다른 요소에 영향없이 움직일 떄 */
+    top: 5px;
+    left: 5px;
+}
+
+.gnb .smenu ol li .vip::before {
+    content: "";
+    display: block;
+    outline: .5px solid #ccc;
+    width: 100%;
+    height: 0px;
+    margin: 3px 0;
+}
+
+.part {
+    width: 1200px;
+    margin: 0 auto;
+    /*outline: 3px dashed lime;*/
+}
+
+#screen {
+    position: absolute;
+    top: 136px;
+    left: 257px;
+    width: 701px;
+    height: 398px;
+    background-color: #f00;
+}
+
+#top {
+    position: relative;
+    height: 80px;
+    z-index: 1;
+}
+
+#cont {
+    position: relative;
+    height: 788px;
+    background: url(../images/bg.jpg) no-repeat;
+}
+
+/*
+    [웹 경로 설정]
+    *절대경로 : 최상위 위치 기준, / 를 이용한 경로 표기법
+    *상대경로 : 현재 위치 기준, 현재 파일 위치(./), 부모 폴더(../)
+    *외부경로
+*/
+
+#screen iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.mlist {
+    position: absolute;
+    bottom: 56px;
+    left: 250px;
+    
+    overflow: hidden;
+}
+
+.mlist ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.mlist ul>li {
+    float: left;
+    padding: 0 10px;
+    
+    cursor: pointer;
+}
+
+.mlist img {
+    width: 99px;
+    height: 140px;
+}
+
+ol.movtxt {
+    position: absolute;
+    
+    /* top방향의 부모는 .mlist */
+    top: 100%;
+    
+    width: 99px;
+    height: 140px;
+    
+    text-align: center;
+    font: 14px/25px 'Cute Font';
+    
+    background-color: rgba(0, 0, 0, 0.5);
+    
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    transition: top .2s ease-out;
+}
+
+.mlist>ul>li:hover .movtxt {
+    top: 0;
+}
+
+.movtxt li:first-child {
+    margin-top: 30px;
+    color: aqua;
+    font-size: 17px;
+}
+
+.movtxt li:last-child {
+    color: coral;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+
+#info {
+    position: relative;
+    height: 100px;
+}
+
+#info address {
+    font-style: normal;
+    font-size: 18px;
+    font-family: "Cute Font";
+    line-height: 20px;
+}
+
+#info address img {
+    float: left;
+    margin-right: 20px;
+}
+
+.sns {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sns li {
+    float: left;
+    width: 34px;
+    height: 34px;
+    margin: 2px;
+
+    background-image: url(../images/sprites_logo.png);
+    /* position: absolute인 부모의 자식요소가 float설정 되어 흘러갈 경우 별도의 clear가 필요없다.
+    높이값을 자동 인식함*/
+}
+
+/*    스프라이트 위치정보 알기
+    -포토샵에서 사각선택툴로 맨위서부터 드래그
+    -가로값은 left 세로는 top값 
+*/
+
+.sns li:first-child {
+    background-position: -510px -429px;
+}
+
+.sns li:nth-child(2) {
+    background-position: -551px -429px;
+}
+
+.sns li:last-child {
+    background-position: -592px -429px;
+}
+
+.sns a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

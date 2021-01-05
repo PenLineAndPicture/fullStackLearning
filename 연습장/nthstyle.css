@@ -1,0 +1,33 @@
+#main {
+    display: table;
+    margin: 0 auto;
+}
+
+#wrapper {
+    display: table-cell;
+    width: 259px;
+    height: 300px;
+}
+
+.box {
+    float: left;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #000;
+    margin: 0 5px 5px 0;
+    text-align: center;
+    line-height: 30px;
+}
+
+/*10~13번까지*/
+.box:nth-child(n+10):nth-child(-n+13) {
+    background-color: red;
+}
+
+.box:nth-child(4n) {
+    background-color: yellowgreen;
+}
+
+.box:nth-child(1) {
+    background-color:aqua;
+}

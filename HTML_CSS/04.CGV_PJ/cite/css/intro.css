@@ -1,0 +1,77 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Audiowide&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+video {
+    width: 100%;
+    width: 100%;
+    object-fit: cover;
+    
+    /* object-fit : 이미지와 비디오 요소에 사용함. */
+    
+    /*
+        cover - 비율에 맞게 부모요소를 꽉 채운다
+        fill - 비율을 깨고 부모박스를 꽉 채운다
+        contain - 이미지나 비디오의 전체 크기를 다 보이게 한다.
+    */
+}
+
+/* body의 가상요소로 비디오 커버 만들기 */
+/* 오버레이 효과 */
+
+body::after {
+    
+    /*부모는 창 화면*/
+    
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+}
+
+#enter {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    
+    outline: 2px dashed lawngreen;
+}
+
+#enter a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#enter span {
+    display: block;
+    text-align: center;
+    font: bold 34px/40px "Audiowide";
+    transition: all 0.4s ease-out;
+}
+
+#enter:hover span {
+    transform: scale(2);    /*2배 키우기*/
+    color: chartreuse;
+}
+
+#enter img {
+    transition: all 0.4s ease-out;
+}
+
+#enter:hover img {
+    transform: scale(2);    /*2배 키우기*/
+    transform: rotate(-15deg); /*각도*/
+}

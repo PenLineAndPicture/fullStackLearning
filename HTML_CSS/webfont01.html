@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Web Font</title>
+    <style>
+        @font-face {
+            font-family: hoon;
+            src: url(fonts/Hoon.woff) format("woff");
+        }
+
+        @font-face {
+            font-family: jua;
+            src: url(fonts/Jua.woff) format("woff");
+        }
+
+        @font-face {
+            font-family: nanumpen;
+            src: url(fonts/Nanumpen.woff) format("woff");
+        }
+
+        .wf1 {
+            font-family: hoon;
+        }
+
+        .wf2 {
+            font-family: jua;
+        }
+
+        .wf3 {
+            font-family: nanumpen;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!--woff(web open font format) : w3c에서 지정한 웹폰트형식-->
+    <!--eot(embeded open type) : ms사에서 개발한 초기버전 웹폰트-->
+    <!--ttf(true type font): 구형안드로이드 버전 4.4에서 사용-->
+
+
+    <!--
+        《일반 pc에서 설치되는 글꼴형식》
+        1. ttf(true type font) 
+            - 애플 사에서 개발한 속도가 빠른 폰트형식
+            - 일반 브라우저 혹은 워드프로세스 등에서 많이 사용
+        2. otf(open type font)
+            - 어도비와 Ms에서 합작한 글꼴
+            - ttf보다 정교한 3차원방식으로 글자를 표현
+            - 정교하지만 무겁고 속도가 느림
+    -->
+
+    <!--
+        『웹폰트 표기법』
+        @font-face {
+            font-family: 웹폰트명;
+            src: url(경로/글꼴명.woff) format("woff"),
+                url(경로/글꼴명.ttf) format("truetype"),
+                url(경로/글꼴명.eot) format("eot");    
+        }
+        
+        *웹폰트 글꼴명은 자유롭게 지정 가능함
+        *src에서는 같은글꼴을 여러 형식으로 세팅 가능함
+        
+        
+        
+        [웹폰트 생성법]
+        1. ttf등의 일반 글꼴을 구한다.
+        2. 웹폰트 변환 프로그램으로 파일 생성
+        - onlinefontconverter.com
+        3. css 웹폰트 설정을 통해 셋팅
+        
+        
+        
+        【폰트가 안나오는 경우】
+        1. font-face 설정에서 src경로가 부정확할 때
+        2. 폰트명이 잘못됐을 때
+        3. woff파일 변환에 문제가 있을 때(오프라인 변환일 경우 온라인 변환을 해보고 문제가 지속되면 다른 폰트로 교체)
+        
+        
+        
+        [font-face 세팅 시 유의점]
+        1. src에 format을 지정해야 웹폰트 로딩 속도가 빠르다.
+        2. 웹폰트 세팅은 css파일 최상단에 세팅해야 한다.
+    -->
+    <h1 class="wf1">네모네모 멈뭄미 너무너무 귀며뭐</h1>
+    <h1 class="wf2">네모네모 멈뭄미 너무너무 귀며뭐</h1>
+    <h1 class="wf3">네모네모 멈뭄미 너무너무 귀며뭐</h1>
+</body>
+
+</html>

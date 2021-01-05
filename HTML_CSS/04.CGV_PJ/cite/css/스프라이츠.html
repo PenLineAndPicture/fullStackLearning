@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS심화-Sprites,IR</title>
+    <style>
+    
+        #icons{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;/*3無*/
+        }
+        #icons:after{
+            content: "";
+            display: block;
+            clear: both;/*float해제*/
+        }
+        #icons li{
+            float: left;
+            width: 128px;
+            height: 128px;
+            outline: 1px solid red;
+        }
+        /*트위터*/
+        #icons li:first-child{
+            
+        }
+        /*트위터 마우스 오버시;*/
+        #icons li:first-child:hover{
+            
+        }
+        
+        /*인스타*/
+        #icons li:nth-child(2){
+            
+        }
+        /*인스타 마우스 오버시*/
+        #icons li:nth-child(2):hover{
+            
+        }
+        
+        /*페북*/
+        #icons li:last-child{
+            
+            
+        }
+        /*페북 마우스 오버시*/
+        #icons li:last-child:hover{
+            
+        }
+        
+        
+        #icons a{/*a태그 확장*/
+            display: block;/*디자인적용위*/
+            width: 100%;
+            height: 100%;
+        }
+       
+       
+    
+    </style>
+</head>
+<body>
+   <ul id="icons">
+       <li>
+           <a href="#">
+               
+           </a>
+       </li>
+       <li>
+           <a href="#">
+               
+           </a>
+       </li>
+       <li>
+           <a href="#">
+               
+           </a>
+       </li>
+   </ul>
+   
+</body>
+</html>

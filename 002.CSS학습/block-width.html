@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>block-width</title>
+    <style>
+        
+        .bx {
+            border: 3px dashed blue;
+            padding: 15px;
+            margin: 15px;
+            font: normal 24px / "맑은 고딕", "굴림";
+            text-align: center;
+        }
+        
+        .bx1{
+            width: 600px;
+        }
+        
+        .bx2{
+            max-width: 1000px;
+        }
+        
+        .bx3{
+            min-width: 700px;
+        }
+        
+        .bx4{
+            min-width: 800px;
+            max-width: 1200px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="bx bx1">가로 크기 : 600px<br>(width: 600px)</div>
+    <div class="bx bx2">최대 가로 크기 : 1000px<br>(max-width: 1000px)</div>
+    <div class="bx bx3">최소 가로 크기 : 700px<br>(min-width: 700px)</div>
+    <div class="bx bx4">최대 가로 크기 : 1200px(max-width: 1200px)<br>최소 가로 크기 : 800px(min-width: 800px)</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Middle Box</title>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        #base {
+            position: relative; /*center를 base 기준으로 중심으로 두려면 relative를 준다.*/
+            top:100px;
+            right: 250px;
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+        }
+        
+        #center {
+            position: absolute;
+            top:0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            line-height: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="base">
+        <div id="center">Middle box</div>
+    </div>
+</body>
+</html>

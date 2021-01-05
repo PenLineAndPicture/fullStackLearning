@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>nth of type class practice</title>
+    <style>
+        li {
+            font-weight: bold;
+        }
+        
+        .word:nth-of-type(3) {
+            color: red;
+        }
+        
+        .letter:nth-of-type(2) {
+            color: blue;
+        }
+        
+        .word:nth-of-type(5) {
+            color: aqua;
+        }
+        
+        .word:nth-of-type(7) {
+            color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="letter">letter</li>
+        <li id="letter">letter</li>
+        <li class="word">word</li>
+        <li class="letter">word</li>
+        <li class="word">word</li>
+        <li id="word">word</li>
+        <li class="word">word</li>
+    </ul>
+</body>
+</html>

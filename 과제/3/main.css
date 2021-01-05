@@ -1,0 +1,186 @@
+@charset="utf-8";
+
+/*Press Start 2P*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+html, body, header, main, ol, li, h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+}
+
+header, main, ol, li, a {
+    font-family: "Press Start 2P";
+    text-shadow: 1px 1px 0 white, -1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white;
+    text-decoration: none;
+}
+
+.title {
+    text-align: center;
+    margin: 50px 0 50px 0;
+}
+
+.title h1 {
+    animation: rainbow_blink 3s infinite;
+}
+
+.main_box {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px;
+    width: 960px;
+    outline: 5px solid white;
+}
+
+.sub_box {
+    margin: 0 20px 0 20px;
+}
+
+.sbx1 {
+    float: left;
+}
+
+.sbx1::after {
+    position: absolute;
+    top: 50%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    content: "";
+    display: block;
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 0;
+    height: 85%;
+    
+}
+
+.sbx2 {
+    float: right;
+}
+
+
+.main_box::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.sub_box:hover h2 {
+    animation: blink .3s infinite alternate;
+}
+
+
+
+.sub_box li {
+    margin: 20px 0 20px 50px;
+}
+
+.sub_box li a {
+    color: black;
+}
+
+.sub_box li:hover, .sub_box li:hover a {
+    animation: blink .5s infinite alternate;
+}
+
+
+
+
+
+.scoreboard {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+.scoreboard label {
+    color: white;
+    font-family: "Press Start 2P";
+    text-align: left;
+}
+
+.scoreboard input {
+    color: white;
+    font-family: "Press Start 2P";
+    text-align: right;
+    width: 100px;
+}
+
+.s_value {
+    position: relative;
+    width: 300px;
+}
+
+.score_name {
+    left: 0;
+}
+
+.score {
+    position: absolute;
+    right: 0;
+}
+
+
+
+
+
+
+@keyframes blink {
+    from {
+        text-shadow: 2px 2px 0 white, -2px 2px 0 white, -2px -2px 0 white, 2px -2px 0 white;
+    }
+    
+    to {
+        text-shadow: 2px 2px 2px gold, -2px 2px 2px gold, -2px -2px 2px gold, 2px -2px 2px gold;   
+    }
+}
+
+@keyframes rainbow_blink{
+    0% {
+        text-shadow: 3px 3px 0 white, -3px 3px 0 white, -3px -3px 0 white, 3px -3px 0 white;
+    }
+    
+    10% {
+        text-shadow: 3px 3px 0 yellow, -3px 3px 0 yellow, -3px -3px 0 yellow, 3px -3px 0 yellow;
+    }
+    
+    20% {
+        text-shadow: 3px 3px 0 lawngreen, -3px 3px 0 lawngreen, -3px -3px 0 lawngreen, 3px -3px 0 lawngreen;
+    }
+    
+    30% {
+        text-shadow: 3px 3px 0 mediumspringgreen, -3px 3px 0 mediumspringgreen, -3px -3px 0 mediumspringgreen, 3px -3px 0 mediumspringgreen;
+    }
+    
+    40% {
+        text-shadow: 3px 3px 0 cyan, -3px 3px 0 cyan, -3px -3px 0 cyan, 3px -3px 0 cyan;
+    }
+    
+    50% {
+        text-shadow: 3px 3px 0 blue, -3px 3px 0 blue, -3px -3px 0 blue, 3px -3px 0 blue;
+    }
+    
+    60% {
+        text-shadow: 3px 3px 0 darkblue, -3px 3px 0 darkblue, -3px -3px 0 darkblue, 3px -3px 0 darkblue;
+    }
+    
+    70% {
+        text-shadow: 3px 3px 0 indigo, -3px 3px 0 indigo, -3px -3px 0 indigo, 3px -3px 0 indigo;
+    }
+    
+    80% {
+        text-shadow: 3px 3px 0 fuchsia, -3px 3px 0 fuchsia, -3px -3px 0 fuchsia, 3px -3px 0 fuchsia;
+    }
+    
+    90% {
+        text-shadow: 3px 3px 0 red, -3px 3px 0 red, -3px -3px 0 red, 3px -3px 0 red;
+    }
+    
+    100% {
+       text-shadow: 3px 3px 0 coral, -3px 3px 0 coral, -3px -3px 0 coral, 3px -3px 0 coral; 
+    }
+}

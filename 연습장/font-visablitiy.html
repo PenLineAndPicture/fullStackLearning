@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Font-visiblity</title>
+    <style>
+        #box1 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-color: red;
+        }
+        
+        #box2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-color: lawngreen;
+            line-height: 500px;
+            text-align: center;
+            font-family: fantasy;
+            font-size: 50px;
+            
+            /*클리핑*/
+            clip-path: circle(100px at center);
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2">This color is Green</div>
+</body>
+</html>

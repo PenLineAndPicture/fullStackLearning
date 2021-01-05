@@ -1,0 +1,171 @@
+@charset "utf-8";
+/*My Item PJ 프로필 페이지 CSS - temp.css*/
+
+/*외부css파일 합치기*/
+@import url(core.css);
+@import url(reset.css);
+@import url(common.css);
+
+
+/*아이폰*/
+
+#iphone {
+    position: relative;
+    
+    top: 100px;
+    width: 200px;
+    height: 400px;
+    margin: 0 auto;
+    
+    transform-style: preserve-3d;
+    transform: rotateY(30deg) rotateX(10deg);
+    
+    
+    animation: rollingY 1.5s ease-in-out 1s 2 alternate;
+}
+
+/* 얼굴 */
+.ir {
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.newFace {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 250px;
+    background: url(../images/prof01.png) no-repeat center/100%;
+    
+    animation: newFace 1s ease-in-out 4s forwards;
+}
+
+@keyframes newFace {
+    0% {
+        height: 250px;
+        background-image: url(../images/prof01.png);
+    }
+    40% {
+        height: 0;
+        background-image: url(../images/prof01.png);
+    }
+    60% {
+        height: 0;
+        background-image: url(../images/prof02.png);
+    }
+    100% {
+        height: 250px;
+        background-image: url(../images/prof02.png);
+    }
+}
+
+
+/* 공통, li 각 면*/
+#iphone li {
+    position: absolute;
+    width: 200px;
+    height: 400px;
+    background-repeat: none;
+    background-size: 100% 100%;
+}
+
+
+/* 앞면 */
+#iphone li:nth-child(1) {
+    background-image: url(../images/ip01.png);
+    transform: translateZ(10px);
+}
+
+/* 뒷면 */
+#iphone li:nth-child(4) {
+    background-image: url(../images/ip02.png);
+    transform: translateZ(-10px) rotateY(180deg);
+}
+
+/* 왼쪽 */
+#iphone li:nth-child(2) {
+    width: 20px;
+    background-image: url(../images/ip04.png);
+    left: -10px;
+    transform: rotateY(90deg);
+    
+}
+
+/* 오른쪽 */
+#iphone li:nth-child(3) {
+    width: 20px;
+    background-image: url(../images/ip03.png);
+    right: -10px;
+    transform: rotateY(90deg);
+    
+}
+
+/* 윗면 */
+#iphone li:nth-child(5) {
+    height: 20px;
+    background-image: url(../images/ip06.png);
+    top: -10px;
+    transform: rotateX(90deg);
+}
+
+/* 아랫면 */
+#iphone li:nth-child(6) {
+    height: 20px;
+    background-image: url(../images/ip05.png);
+    bottom: -10px;
+    transform: rotateX(90deg);
+}
+
+
+/* 폰회전 1 */
+@keyframes rollingY {
+    to {
+        transform: rotateY(-330deg) rotateX(10deg);
+    }
+}
+
+
+
+
+
+/*재정의*/
+#cont {
+    position: relative;
+    height: 590px;
+}
+
+/* 소개글박스*/
+.showtxt{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 300px;
+    height: 0;
+    
+    animation: showtxt .5s ease-out 4.5s forwards;
+}
+
+/* 디자이너글박스 */
+.dtxt {
+    left: 10px;
+    background: url(../images/prof01_txt.png) no-repeat;
+}
+/* 코더 글박스 */
+.ctxt {
+    right: 10px;
+    background: url(../images/prof02_txt.png) no-repeat;
+}
+/* 키프레임 */
+
+
+
+@keyframes showtxt {
+    to {
+        height: 200px;
+    }
+}

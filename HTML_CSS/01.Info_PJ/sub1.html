@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--lang속성은 메인언어 속성(언어별코드가 있음)-->
+
+<head>
+	<meta charset="UTF-8">
+	<title>네이버 요약뉴스 - 정치</title>
+	<style>
+		body {
+			/*div는 블록요소다*/
+			width: 700px;
+			margin: 0 auto;
+			/*마진: 위아래는 0, 양쪽은 자동(auto)*/
+			/*크기를 가진 블록박스가 중앙에 온다*/
+		}
+
+
+		/*CSS주석*/
+		/*        
+        [css 셋팅법]
+        선택요소명 {
+            속성명 : 값;
+        }
+        */
+
+	</style>
+</head>
+
+<body>
+
+	<!--1.상단부분-->
+	<div>
+		<!--1-1.큰제목-->
+		<h1>네이버 요약 뉴스 - 정치</h1>
+		<!--h1요소는 한문서안에 하나만 사용하도록 하자-->
+
+		<!--1-2.메뉴-->
+		<h2>
+			<a href="index.html">
+				<img src="images/logo.png" alt="네이버로고" style="width:50px; vertical-align: middle;">
+				<!--style 속성 : 모든 요소에 사용가능
+                - 속성명:값;
+                - CSS속성을 변경 셋팅할 수 있다
+                - CSS 인라인 셋팅(코딩)이라고 함-->
+			</a>
+			<a href="sub1.html">정치</a> |
+			<a href="sub2.html">경제</a> |
+			<a href="sub3.html">사회</a> |
+			<a href="sub4.html">IT/과학</a> |
+			<a href="sub5.html">TV/연예</a>
+		</h2>
+
+		<hr>
+		<!--hr은 수평선(horizontal)-->
+	</div>
+	<!--
+        div 요소 : 내용을 구분하는 블록요소
+        (블록요소란 다른 내용을 옆에 오지 못하게 막아준다. 랩핑했다고 함)
+    -->
+
+
+	<!--
+    <b> - Bold text
+	<strong> - Important text
+	<i> - Italic text
+	<em> - Emphasized text
+	<mark> - Marked text
+	<small> - Smaller text
+	<del> - Deleted text
+	<ins> - Inserted text
+	<sub> - Subscript text
+	<sup> - Superscript text
+	-->
+
+
+	<!--2.중앙내용-->
+	<div>
+
+		<!--2-1. 신문사 로고-->
+		<a href="http://www.kwnews.co.kr/" target="_blank"><img src="images/apic1.png" alt="강원일보 로고"></a>
+		<!--2-2. 기사 제목-->
+		<h2>문재인 정부 들어 서울 중소형 아파트값 66% 올라…서민 살집 사라져</h2>
+		<!--2-3. 기사 사진-->
+		<figure>
+			<!--기사이미지-->
+			<img src="images/apic1-1.jpg" alt="정치면 기사 사진" title="This is Nation - 이게 나라다! holy moly" style="width: 100%;">
+			<!--이미지설명-->
+			<figcaption>
+				<small>문재인 정부 들어 서울 중소형 아파트값 66% 올라…서민 살집 사라져 사진=<cite>연합뉴스</cite></small>
+			</figcaption>
+		</figure>
+		<!--figure 요소 : 그림, 표, 이미지를 담는 박스 요소
+			- 하위 요소로 figcaption은 이미지 설명을 담는다.
+		-->
+
+		<p><b>문재인 정부 3년간</b> 서울Seoul에서 서민과 <abbr title="사회초년생">사초생</abbr>이 많이 찾는 중소형 <b>아파트 시세가 65.9% 오른 것</b>으로 나타났다.</p>
+
+		<p>21일 국민의힘 김상훈 의원은 한국감정원의 '서울 아파트 평형별 평균 매매시세 현황' 자료를 분석한 결과 서민층이 많이 찾는 전용면적<sup style="color: red; font-weight: bold;">⑴</sup> 40~62.8㎡의 중소형 시세가 2017년 5월 3억7천218만원에서 <strong>올해 7월 6억1천741만원으로 65.9%(2억4천523만원) 상승한 것으로 집계됐다</strong>고 밝혔다.</p>
+
+		<p>아파트를 전용면적<sup style="color: red; font-weight: bold;">⑵</sup> 기준으로 <i>소형(40㎡ 미만), 중소형(40~62.8㎡), 중형(62.8~95.9㎡), 중대형(95.9~135.0㎡), 대형(135.0㎡ 이상)</i>으로 분류하고 각 상승률을 따졌는데, 중소형 아파트의 상승률이 가장 높았다.</p>
+
+		<p>중형(62.8~95.9㎡) 아파트는 5억1천524만원에서 8억3천197만원으로 61.5% 올랐고 중대형(95.9~135.0㎡)은 7억2천738만원에서 11억4천6만원으로 56.7% 상승했다.</p>
+
+		<p>가장 적은 폭으로 오른 것은 소형(40㎡ 미만)으로 <mark>2억6천117만원에서 3억5천9만원</mark>으로 상승률이 34.0%였다.</p>
+
+		<p>김 의원은 <q>역세권과 거리가 있고 연식이 오래된 저가 소형·중소형 아파트마저도 문재인 정부 3년간 집값이 올라 자금이 넉넉지 못한 서민과 사회초년생의 내 집 마련이 어렵게 됐다</q>고 지적했다. <del style="font-weight: bold; color: dimgray;">집값 더럽게 비싸네 진짜</del></p>
+
+		<p>김상훈 의원은 <q>지난 3년여간 서울에서 보통 시민이 사고 살집이 사라졌다</q>고 지적하고 <q>문 정부의 부동산 실정이 갭투자와 패닉바잉<sup>panic-buying</sup>을 자극하면서 서민의 주거비용을 급증시킨 만큼, 현 주거정책의 전반적인 수정이 필요하다</q>고 주장했다.</p>
+
+		<h3>부동산의 정의</h3>
+
+		<blockquote cite="https://terms.naver.com/entry.nhn?docId=1103675&cid=40942&categoryId=31834">
+			물건(物件)인 유체물(有體物) 및 전기(電氣) 기타 관리할 수 있는 자연력(민법 제98조) 중에서 토지 및 그 정착물은 부동산이고, 부동산 이외의 물건은 동산이다(99조).
+
+			연혁적으로 부동산은 동산에 비해 경제적 가치가 크다는 점에서 동산과 구별하여 특별한 보호를 하였으나, 오늘날 그러한 의의는 크게 상실되었으며 장소의 이전가능성에 따른 공시방법(公示方法)의 차이가 구별의 근본이유가 된다. 동산인 선박, 항공기, 자동차, 건설기계 등에 대하여도 부동산과 같이 등기(登記)·등록(登錄)이 인정됨으로써 부동산과 동산의 구별의 실익은 점차 줄어들고 있으나, 부동산은 성립하는 물권(物權), 물권변동(物權變動)의 공시방법, 공신(公信)의 원칙, 선의취득(善意取得), 취득시효(取得時效)와 환매(還買)의 기간, 무주물선점(無主物先占), 부합(附合)과 그 효과, 강제집행의 방법, 재판관할의 특칙, 상린관계(相隣關係), 임차권(賃借權)의 대항력(對抗力) 등에서 동산과 다르게 취급된다.
+
+		</blockquote>
+
+
+
+	</div>
+	<!--3.하단부분-->
+	<hr>
+	<!--구분선-->
+	<p>
+		<small>⑴ 빌라, 소형 주택 기준</small>
+	</p>
+	<p>
+		<small>⑵ 강남, 강북 아파트 기준</small>
+	</p>
+	<hr>
+
+	<h3>정치 뉴스 더 보기</h3>
+	<ol>
+		<li><a href="https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=025&aid=0003045684&date=20201022&type=1&rankingSeq=1&rankingSectionId=100" target="_blank">윤석열, 아내 재산 캐묻자 "오십 넘어 한 결혼…답변해야 하나"</a></li>
+		<li><a href="https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=023&aid=0003570576&date=20201022&type=1&rankingSeq=2&rankingSectionId=100" target="_blank">여당 “패 죽인 게 뭡니까” 윤석열 "패서 죽인거 맞거든요?"</a></li>
+		<li><a href="https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=023&aid=0003570579&date=20201022&type=1&rankingSeq=3&rankingSectionId=100" target="_blank"> "윤석열 똑바로 앉아라” 다그친 박범계, 과거엔...</a></li>
+	</ol>
+	<h3>주요 뉴스</h3>
+	<ul>
+		<li><a href="https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=009&aid=0004679789&date=20201022&type=1&rankingSeq=1&rankingSectionId=101" target="_blank">[단독] 목동 전 단지에 붉은 휘장…"죽기 전에 재건축"</a></li>
+		<li><a href="https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=008&aid=0004487988&date=20201022&type=1&rankingSeq=1&rankingSectionId=103" target="_blank">당뇨병 환자, 이 음료 매일 마시면 사망 위험 '뚝'</a></li>
+		<li><a href="https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=025&aid=0003045733" target="_blank">국감 중 게임한 강훈식 "두말할 여지 없이 잘못…반성·자숙하겠다"</a></li>
+	</ul>
+
+	<!--ul(순서 없는 리스트: unordered list)은 반드시 li 자식 요소를 갖는다.-->
+	<!--ol(순서 있는 리스트: ordered list)은 반드시 li 자식 요소를 갖는다.-->
+	
+	<h3>분야별 뉴스</h3>
+	<dl>
+		<dt>경제</dt>
+		<dd><a href="">CJ 대한통운, 택배분류에 4000명 긴급투입...</a></dd>
+		<dd><a href="">CJ 대한통운, 택배기사 사망 사과, 4000명 투입해 근무시간 단축</a></dd>
+		<dt>사회</dt>
+		<dd><a href="">"접종부위, 빨갛게 부어오르고 통증 있었다." 백신 접종 후 숨진 창원 70대 발적, 통증</a></dd>
+		<dd><a href="">"꽃게 살 돈까지 도박으로 날렸다." 해경 '자진 월북' 결론</a></dd>
+		<dt>IT/과학</dt>
+		<dd><a href="">'엣지' 버린 삼성 스마트폰, 다음은 '칼날'?</a></dd>
+		<dd><a href=""> "아이폰12 배터리, 5G 환경선 안드로이드폰 못 미쳐..."</a></dd>
+	</dl>
+	
+	<hr>
+	<!--주소-->
+	<address>
+		서울시 강동구 천호동 동원빌딩 5층
+		<br>
+		<!--br은 개행(break)-->
+		대표: 김 태 환
+		<br>
+		Tel: 010-9906-4542
+	</address>
+</body>
+
+</html>

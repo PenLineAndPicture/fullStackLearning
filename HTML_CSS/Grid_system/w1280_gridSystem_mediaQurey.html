@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Grid System 1280px MediaQurey</title>
+    <link rel="stylesheet" href="css/gridSet.css">
+    <link rel="stylesheet" href="css/gridView.css">
+    
+    <style>
+        html, body, h1, h2 {
+            margin: 0;
+            padding: 0;
+        }
+        
+        /*그리드뷰 재설정*/
+        .grid {
+            width: 1280px;
+            z-index: -1;
+        }
+        
+        .ibx {
+            width: 1280px;
+            max-width: 100%;        /*화면이 1280px보다 작으면 100%*/
+            margin: 0 auto;
+            outline: 3px dashed blue;
+        }
+        
+        
+        
+        /*상단*/
+        .t1 {
+            height: 100px;
+        }
+        
+        /*컨텐츠1*/
+        .c11 {
+            height: 295px;
+        }
+        
+        .c12, .c13 {
+            height: 100px;
+        }
+        
+        /*컨텐츠2*/
+        .c21, .c22 {
+            height: 210px;
+        }
+        
+        /*컨텐츠3*/
+        .c31 {
+            height: 295px;
+        }
+        
+        .c32 {
+            height: 262px;
+        }
+        /*하단영역*/
+        .i1 {
+            height: 72px;
+        }
+        
+        .i2 {
+            height: 117px;
+        }
+        
+        
+        
+        /*mediaQurey*/
+        
+        /*
+        [그리드시스템의 미디어쿼리]
+        
+        1. 변경할 크기의 미디어쿼리 구간에 그리드 사이즈 class를 다른이름으로 넣어준다.
+        2. 변경할 레이아웃의 class를 추가적으로 html요소에 넣어준다.
+        
+        */
+        @media only screen and (max-width: 1024px){
+            
+        }
+        
+        
+    </style>
+    
+</head>
+
+
+
+<body>
+    <ul class="grid">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+
+</html>
