@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Solar System 2D</title>
+    <style>
+        
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        body {
+            background: url(images/space.jpg) no-repeat 0/cover;
+        }
+        
+        #solar {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
+            height: 250px;
+        }
+        
+        #sun {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: 0 0 100px 40px orange;    /*x좌표 y좌표 경계선흐림 그림자크기 색상*/
+        }
+        
+        #sun img {
+            width: 100%;
+            height: 100%;
+            animation: flame 40s linear infinite alternate;
+        }
+        
+        /*화염 애니메이션*/
+        @keyframes flame {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.5);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <!--태양계 박스-->
+    <div id="solar">
+        <!--태양-->
+        <div id="sun">
+            <img src="images/sun.png" alt="태양">
+        </div>
+        <!--지구-->
+        <div id="earth"></div>
+        <!--목성-->
+        <div id="jupiter"></div>
+        <!--명왕성-->
+        <div id="pluto"></div>
+    </div>
+</body>
+</html>
