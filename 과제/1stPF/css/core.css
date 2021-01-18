@@ -1,0 +1,225 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+}
+
+
+/********************************* 헤더 ********************************/
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    outline: 2px solid black;
+    z-index: 999999;
+}
+
+header > div {
+    height: 100%;
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+}
+
+.mcase {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.mcase::after {
+    content:"";
+    display: block;
+    clear: both;
+}
+
+.mmenu {
+    position: relative;
+    width: 33.33%;
+/*    height: 100%;*/
+    float: left;
+}
+
+.mmenu:hover {
+    background-color: crimson;
+}
+
+.mmenu > a {
+    display: block;
+    line-height: 100px;
+    text-align: center;
+}
+
+.mmenu > ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    
+    display: none;
+}
+
+.smenu {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+}
+
+.smenu:hover {
+    background-color: cornflowerblue;
+}
+
+.smenu a {
+    display: block;
+    text-align: center;
+}
+
+.mmenu:hover > ul {
+    display: block;
+}
+
+.smenu > ul {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100px;
+    
+    display: none;
+}
+
+.smenu > ul > li {
+    width: 100%;
+    height: 100%;
+}
+
+.smenu > ul > li:hover {
+    background-color: lightcoral;
+}
+
+.smenu:hover > ul {
+    display: block;
+}
+
+/********************************* 헤더 ********************************/
+
+
+/********************************* 메인 ********************************/
+
+main {
+    position: relative;
+    height: 300%;
+    padding-top: 100px;
+    outline: 2px solid orange;
+}
+
+main::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.page{
+    position: relative;
+    width: 100%;
+    height: calc(100% - 100px);
+    
+    background-color: rgb(0,0,0,0.5);
+    outline: 2px dotted red;
+}
+
+.page:nth-of-type(1){
+    margin-top: 100px;
+}
+
+.part {
+    position: relative;
+    top: 0;
+    right: 0;
+    height: 100%;
+    outline: 2px solid gold;
+}
+
+.part::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.partition {
+    position: relative;
+    height: 100%;
+    right: 0;
+    outline: 2px solid black;
+    float: left;
+}
+
+.partition::before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+
+.ptit {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    margin-left: 20px;
+    font-family: stencil;
+    font-size: 40px;
+    color: white;
+}
+
+.ptit::before {
+    display: block;
+    content: "";
+    left: 0;
+    width: 80%;
+    margin-left: 0;
+    height: 0;
+    border: 3px solid white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

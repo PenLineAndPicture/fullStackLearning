@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JS의 Get방식 처리</title>
+    <style type="text/css">
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            padding: 0;
+            width: 800px;
+            height: 100px;
+            margin: 0 auto;
+            font: bold 28px/100px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+            color: blue;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        nav {
+            width: 800px;
+            height: 100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav a:hover {
+            text-decoration: overline;
+        }
+
+        section {
+            width: 800px;
+            height: 500px;
+            margin: 0 auto;
+        }
+
+        section img {
+            width: 49%;
+            height: 50%;
+        }
+        
+        
+        
+        
+    </style>
+    <script>
+        
+        /// 로드구역 /////////////////////////////////////
+        window.addEventListener("DOMContentLoaded",
+            function() {
+            
+            console.log("로딩완료!");
+            
+            // 이벤트 종류: click
+            // 이벤트 대상: #gnb a
+            // 변경내용: 샵명 클릭시 Get02.html페이지로 
+            //          내용을 get방식으로 전달한다
+            
+            var tg = document.querySelectorAll("#gnb a");
+            console.log("a의개수:"+tg.length);
+            
+            // 모든 a요소에 onclick 셋팅하기!
+            // 개수만큼 for문 돌리기(for of문)
+            //for(var i=0; i<tg.length; i++){}
+            for(var x of tg){
+                x.onclick = function(){
+                    // 나자신 this
+                    var txt = this.innerText;
+                    console.log("a요소 글자:"+txt);
+                    
+                    // 서브페이지로 이동하기
+                    // 해외로케??? 이동은 location.href
+                    location.href = "Get02.html?sn="+escape(txt);
+                    
+                    /*
+                        2바이트 문자를 url로 보내면 깨짐
+                        따라서 규칙성 있게 변환하여 보내고
+                        받는 페이지에서 그 규칙을 풀어서 복원하면 된다
+                        
+                        보낼때는 escape
+                        
+                        받을때는 unescape
+                        
+                        escape를 해야 unescape가 된다.
+                        
+                    */
+                    
+                };//// click함수 /////////////////////
+            }/// for of문 //////////////////////////////
+        
+        
+        });///////// 로드구역 /////////////////////////////
+        
+        
+    </script>
+
+</head>
+
+<body>
+    <h1>GG Market</h1>
+    <nav>
+        <h2 id="gnb">
+            <a href="#">레드샵</a> |
+            <a href="#">오렌지샵</a> |
+            <a href="#">그린샵</a> |
+            <a href="#">블루샵</a> |
+            <a href="#">블랙샵</a>
+        </h2>
+    </nav>
+    <section>
+        <img src="images/shop_red.jpg" alt="레드샵">
+        <img src="images/shop_orange.jpg" alt="오렌지샵">
+        <img src="images/shop_green.jpg" alt="그린샵">
+        <img src="images/shop_blue.jpg" alt="블루샵">
+    </section>
+
+
+
+
+</body></html>

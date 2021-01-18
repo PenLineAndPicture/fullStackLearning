@@ -14,6 +14,38 @@
         
         body {
             background: url(images/space.jpg) no-repeat 0/cover;
+            overflow: hidden;
+        }
+        
+        /*타이틀*/
+        .tit{
+            position: relative;
+            z-index: 1;
+            /*z-index는 포지션이 static이 아니어야 적용된다!*/
+            text-align: center;
+            font-family: 'Big Shoulders Stencil Text', cursive;
+            color: #fff;
+            font-size: 80px;
+            margin: 0;
+            padding: 20px;
+        }
+        /*축소확대버튼*/
+        .tit2{
+            padding: 0;
+            font-size: 20px;
+        }
+        .tit2 a{
+            text-decoration: none;
+            color: #fff;
+            margin: 0 20px;
+        }
+        /*마우스오버시*/
+        .tit2 a:hover{
+            color: #0ff;
+        }
+        /*선택된 class*/
+        .tit2 a.on{
+            color: #0ff;
         }
         
         #solar {
@@ -39,6 +71,7 @@
         #sun img {
             width: 100%;
             height: 100%;
+            
             animation: flame 40s linear infinite alternate;
         }
         
@@ -52,9 +85,177 @@
             }
         }
         
+        
+        
+        #earth {
+            position: relative;
+            top: 85px;
+            left: 85px;
+            width: 80px;
+            height: 80px;
+            background: url(images/earth.png) no-repeat 0/100% 100%;
+            
+            animation: earth 10s linear infinite;
+        }
+        
+        @keyframes earth {
+            from {
+                transform: rotate(0) translateX(-250px) rotate(0);    /*-250px 만큼 밀려 돈다*/
+            }
+            to {
+                transform: rotate(360deg) translateX(-250px) rotate(-360deg);    /*rotate끼리의 의미가 다르다*/
+            }
+        }
+        
+        
+        #jupiter {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 150px;
+            height: 150px;
+            background: url(images/jupiter.png) no-repeat 0/100% 100%;
+            
+            animation: jupiter 15s linear infinite;
+        }
+        
+        
+        @keyframes jupiter {
+            from {
+                transform: rotate(0) translateY(400px) rotate(0);
+            }
+            to {
+                transform: rotate(360deg) translateY(400px) rotate(-360deg);
+            }
+        }
+        
+        
+        
+        #pluto {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            width: 50px;
+            height: 50px;
+            background: url(images/pluto.png) no-repeat 0/100% 100%;
+            
+            animation: pluto 40s linear infinite;
+        }
+        
+        
+        @keyframes pluto {
+            from {
+                transform: rotate(0) translateY(550px) rotate(0);
+            }
+            to {
+                transform: rotate(360deg) translateY(550px) rotate(-360deg);
+            }
+        }
+        
+        
+        #ufo {
+            position: absolute;
+            top: 88px;
+            left: 88px;
+            width: 80px;
+            height: 80px;
+            background: url(images/ufo.gif) no-repeat 0/100% 100%;
+            
+            animation: ufo 10s linear infinite;
+        }
+        
+        
+        @keyframes ufo {
+            from {
+                transform: rotate(0) translateY(400px) rotate(0);
+            }
+            
+            to {
+                transform: rotate(360deg) translateY(400px) rotate(-360deg);
+            }
+        }   
+        
+        #moon {
+            position: absolute;
+            top: 17px;
+            left: 17px;
+            width: 50px;
+            height: 50px;
+            background: url(images/moon.png) no-repeat 0/100% 100%;
+            
+            animation: moon 2.5s linear infinite;
+        }
+        
+        @keyframes moon {
+            from {
+                transform: rotate(0) translateY(100px) rotate(0);
+            }
+            
+            to {
+                transform: rotate(360deg) translateY(100px) rotate(-360deg);
+            }
+        }   
+        
+        .guideline {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid white;
+        }
+        
+        .orbit1-1 {
+            top: -60px;
+            left: -60px;
+            width: 200px;
+            height: 200px;
+        }
+        
     </style>
+    
+    <script>
+    /*////////////////////////////////////////////////////////////
+        함수명: scaleView
+        기능: solar system 부모박스의 크기를 transform으로 축소,확대한다
+    */////////////////////////////////////////////////////////////
+    function scaleView(val,obj){// val-축소확대값, obj-a태그 자신
+        
+        console.log("축소확대:"+val);
+        
+        // 1.변경대상: #solar
+        var tg = document.querySelector('#solar');
+        
+        // 2.변경내용: style의 transform의 scale을 변경한다!
+        // 단, 기존의 중앙이동을 살려놔야함! translate(-50%,-50%)
+        tg.style.transform = "translate(-50%,-50%) scale("+val+")";
+        tg.style.transition = "transform 2s ease-out";
+        
+        // 3. a요소 class 초기화
+        var link = document.querySelectorAll('.tit2 a');
+        for(var x of link){
+            x.classList.remove("on");
+        }//////// for ////////////////
+        
+        //4. 해당 a요소만 class="on"넣기
+        obj.classList.add("on");
+        
+        
+        
+    } ////// scaleView 함수 /////////////////////////////
+    /////////////////////////////////////////////////
+    /////////////////////////////////////////////////
+    
+    
+    </script>
 </head>
 <body>
+    <h1 class="tit">Solar System</h1>
+    
+    <!--배율버튼-->
+    <h2 class="tit tit2">
+        <a href="" onclick="scaleView(0.3,this);return false;">X 0.3</a> | 
+        <a href="" onclick="scaleView(0.5,this);return false;">X 0.5</a> | 
+        <a href="" onclick="scaleView(1,this);return false;" class="on">X 1</a> | 
+        <a href="" onclick="scaleView(1.5,this);return false;">X 1.5</a> 
+    </h2>
     <!--태양계 박스-->
     <div id="solar">
         <!--태양-->
@@ -62,11 +263,16 @@
             <img src="images/sun.png" alt="태양">
         </div>
         <!--지구-->
-        <div id="earth"></div>
+        <div id="earth">
+            <div class="guideline orbit1-1"></div>
+            <div id="moon"></div>
+        </div>
         <!--목성-->
         <div id="jupiter"></div>
         <!--명왕성-->
         <div id="pluto"></div>
+        <!--ufo-->
+        <div id="ufo"></div>
     </div>
 </body>
 </html>

@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+
+.grid {
+    position: fixed;
+    top: 0;
+    left: 50%;
+
+    /*화면고정, 가로중앙, 세로꽉참*/
+    transform: translateX(-50%);
+
+    /*가로폭은 960px 또는 1200px 또는 사용자지정*/
+    width: 1200px;
+
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    opacity: 0.2;
+    z-index: -1;
+    min-width: 100%;
+}
+
+
+.grid li {
+    box-sizing: border-box;
+    float: left;
+    width: 8.33%;
+    height: 100%;
+    background-color: #00f;
+    padding: 0 10px;
+
+    /*배경색 영역설정 속성 (이미지는 background-origin)*/
+    background-clip: content-box;
+
+}
+
+
+/*12컬럼 세팅 class*/
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+
+
+
+/*"col-"로 된 class명만 float: left 설정하기*/
+
+/* [] : 속성을 선택하는 선택자    /    *= : 같은 문자가 있기만 하면 선택    /    ^= : 시작하는 문자가 있으면 선택    /    $= : 끝나는 문자가 있으면 선택 */
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid red;
+}
+
+
+.clb::after {
+    content: "";
+    display: block;
+    clear: both;
+}
