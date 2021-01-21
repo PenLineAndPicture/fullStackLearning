@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>토글 버튼</title>
+    <script src="jquery-1.7.2.min.js">
+    
+    ////////////// jQB //////////////   
+    $(function(){
+       
+        $(".ham").click(function(){
+            $(this).toggleClass("on");
+            //이미 셋팅된 clss "on"을 없으면 넣고 있으면 뺸다      
+        })
+        
+        
+    });/////////////// jQB //////////////
+    
+    
+    </script>
+    <style>
+        .ham {
+            position: relative;
+            width: 60px;
+            height: 40px;
+            outline: 1px solid red;
+        }
+        
+        .ham span {
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            background-color: #000;
+            
+            transition: all .4s;
+        }
+        
+        
+        .ham span:nth-child(1){
+            top: 0;
+        }
+        .ham span:nth-child(2){
+            top: 15px;
+            left: 0;
+        }
+        .ham span:nth-child(3){
+            top: 30px;
+        }
+        
+        
+        /* .ham에 class="on"을 줄 경우 span변경하기*/
+        /* 첫번째 span 막대 : 중앙이동하여 회전함 */
+        .ham.on span:nth-child(1){
+            top: 15px;
+            transform: rotate(45deg);
+        } 
+        .ham.on span:nth-child(2){
+            width: 0%;
+            left: 50%;
+        } 
+        .ham.on span:nth-child(3){
+            top: 15px;
+            transform: rotate(-45deg);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="ham">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>
