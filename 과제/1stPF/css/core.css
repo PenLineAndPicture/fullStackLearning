@@ -12,6 +12,7 @@ html, body {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
+    background-color: #fff;
 }
 
 ul, li {
@@ -102,7 +103,7 @@ a {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    transition: background-color .3s ease-out;
+    transition: background .3s cubic-bezier(0.33, 1, 0.68, 1);
 }
 .chkpoint a{
     display: block;
@@ -522,7 +523,7 @@ main::after {
     top: 50%;
     font-family: "Gothic A1";
     font-size: 40px;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .discript .outlink a {
@@ -567,21 +568,34 @@ main::after {
 }
 
 .gallist {
-    position: absolute;
+    position: relative;
     top: 50%;
     transform: translateY(-50%);
-    right: 60px;
-    width: 400px;
+    margin-left: 1450px;
+    width: 300px;
     height: 600px;
-    border: 1px solid #c0c0c0;
-    box-shadow: inset -10px 10px 20px #dbdbdb,inset 10px -10px 20px #dbdbdb;
+    /*border: 1px solid #c0c0c0;*/
+    /*box-shadow: inset -10px 10px 20px #dbdbdb,inset 10px -10px 20px #dbdbdb;*/
     background-color: #fff;
     
-    overflow: hidden;
+    overflow: scroll;
+    overflow-x: hidden;
+    
+    scroll-behavior: smooth;
 }
 
-.arrowtop {
-    position: absolute;
+.gallist::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(0, 0, 0, 0);
+}
+
+.gallist::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background-color: #c2c2c2;
+}
+
+/*.arrowtop {
+    position: fixed;
     font-size: 60px;
     top: 10px;
     left: 50%;
@@ -589,13 +603,13 @@ main::after {
     color: #c0c0c0;
     transition: transform .1s ease-out;
     box-sizing: border-box;
-    overflow: hidden;
     
     padding-bottom: 5.5px;
+    cursor: pointer;
 }
 
 .arrowbottom {
-    position: absolute;
+    position: fixed;
     font-size: 60px;
     bottom: 10px;
     left: 50%;
@@ -606,6 +620,7 @@ main::after {
     overflow: hidden;
     
     padding-bottom: 5.5px;
+    cursor: pointer;
 }
 
 .arrowtop:hover {
@@ -615,9 +630,46 @@ main::after {
 
 .arrowbottom:hover {
     transform: translate(-50%) rotate(-90deg) scale(1.2);
+}*/
+
+.mphoto {
+    position: absolute;
+    top: 50%;
+    margin-left: 50px;
+    transform: translateY(-50%);
+    border: 1px solid #c0c0c0;
+    width: 500px;
+    height: 500px;
 }
 
+.phototext {
+    position: absolute;
+    box-sizing: border-box;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    margin-right: 50px;
+    padding: 30px;
+    border: 1px solid #c0c0c0;
+    width: 600px;
+    height: 500px;
+    
+    font-family: "Papyrus";
+}
 
+.photo {
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 0;
+    border: 1px solid #c2c2c2;
+    border: 1px solid #c0c0c0;
+    box-shadow: 3px 3px 3px #dbdbdb;
+    
+    width: 80%;
+    height: 200px;
+}
 
 
 
@@ -628,6 +680,8 @@ main::after {
 /*********** 푸터 ***********/
 footer {
     position: relative;
+    padding-left: 30px;
+    padding-bottom: 30px;
     background-color: white;
 }
 
@@ -658,7 +712,7 @@ footer {
 address {
     position: absolute;
     top: 10px;
-    left: 220px;
+    left: 240px;
     font-style: normal;
     font-weight: bold;
     color: #2c2c2c;
