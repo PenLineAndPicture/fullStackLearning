@@ -1,18 +1,5 @@
 //과제 - main.js
 
-//상품
-
-var merchandise = {
-    
-}
-
-
-
-
-
-
-
-
 /////////////////////// 로딩구역 ////////////////////
 window.addEventListener("DOMContentLoaded",function(){
     
@@ -26,3 +13,13 @@ window.addEventListener("DOMContentLoaded",function(){
 
 
 //아이템 넣기
+
+var photo = document.getElementsByClassName("photo");
+
+if(photo[0] === document.getElementsByClassName("photo")[0]){
+    console.log("일치");
+};
+
+if(photo.onclick === photo[0]){
+    document.getElementsByClassName("mphoto")[0].src="ring.jpg";
+};

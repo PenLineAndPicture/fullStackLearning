@@ -580,8 +580,6 @@ main::after {
     
     overflow: scroll;
     overflow-x: hidden;
-    
-    scroll-behavior: smooth;
 }
 
 .gallist::-webkit-scrollbar {
@@ -592,6 +590,24 @@ main::after {
 .gallist::-webkit-scrollbar-thumb {
     border-radius: 30px;
     background-color: #c2c2c2;
+}
+
+
+
+.photo:nth-child(1) {
+    background: url(../image/ring.jpg) no-repeat center/cover;
+}
+.photo:nth-child(2) {
+    background: url(../image/earing.jpg) no-repeat center/cover;
+}
+.photo:nth-child(3) {
+    background: url(../image/necklace.jpg) no-repeat center/auto 100%;
+}
+.photo:nth-child(4) {
+    background: url(../image/bracelet.jpg) no-repeat center/ 100% auto;
+}
+.photo:nth-child(5) {
+    background: url(../image/broche.jpg) no-repeat center/70% 80%;
 }
 
 /*.arrowtop {
@@ -669,6 +685,7 @@ main::after {
     
     width: 80%;
     height: 200px;
+    cursor: pointer;
 }
 
 
