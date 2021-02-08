@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded",function(){
 });
 /////////////////////// 로딩구역 ////////////////////
 
-function chgImg1() {
-    console.log("1번째!");
-};
+
+function gallist(seq){
+    console.log(seq);
+}
