@@ -1,7 +1,13 @@
 //과제 - main.js
 
+<<<<<<< Updated upstream
 
 var Img = document.getElementById("mainPhoto");
+=======
+photoSelect[i] = new Image();
+
+var photoSelect = ["image/ring.jpg", "image/earing.jpg", "image/necklace.jpg", "image/bracelet.jpg", "image/broche.jpg"]
+>>>>>>> Stashed changes
 
 /////////////////////// 로딩구역 ////////////////////
 window.addEventListener("DOMContentLoaded", function () {
@@ -49,6 +55,7 @@ function gallist(seq) {
     //2. class "phototext"에 이름, 가격 넣기
     //3. phototext에 넣은 텍스트들 css적용
 
+<<<<<<< Updated upstream
     //    
     //    if(seq === 0){
     //        console.log("첫번째입니다.")
@@ -71,3 +78,8 @@ function gallist(seq) {
     //        Img.style.backgroundColor = "purple";
     //    };
 }
+=======
+function gallist(seq){
+    console.log(seq+1 + "번입니다");
+};
+>>>>>>> Stashed changes

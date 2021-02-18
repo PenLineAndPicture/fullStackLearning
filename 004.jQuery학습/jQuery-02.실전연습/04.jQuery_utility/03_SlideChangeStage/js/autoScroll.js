@@ -49,6 +49,17 @@ $(function () { ///// jQB /////////////////
 
         //console.log("스크롤중~!");
 
+        // 광스크롤 막기 /////////////////////////////
+        if (psts === 1) return true;
+        // return false 하면 에러남! 왜? document니까!법이 바뀜!
+        // return true 돌아가되 기능은 켜놓고 가(스크롤되게해!)
+        // 우리는 이미 overflow:hidden 으로 스크롤막아서 상관없음!
+        psts = 1; //잠금!
+        setTimeout(function () {
+            psts = 0;
+        }, 1200); /// setTimeout ////
+        ///////////////////////////////////////////
+
         // 1. 마우스휠 방향 알아내기
         e = window.event || e;
         // 이벤트 전달값이 window 오리지널 이벤트가 사용가능하면
@@ -64,7 +75,31 @@ $(function () { ///// jQB /////////////////
         let delta = e.detail ? e.detail : e.wheelDelta;
         // 변수에 유효한 설정이 적용되어 할당됨!
 
-        //console.log("휠정보:" + delta);
+        console.log("휠정보:" + delta);
+        
+        ///// 파이어폭스 일때 델타값 방향 반대로 하기!//////
+        // JS 내장함수 test()를 이용하여
+        // navigator.userAgent - 현재 브라우저 정보읽어옴!
+        // "Firefox"라는 정보가 있으면 test() 에서 true값 리턴함!
+        // 그래서 if문 안으로 들어가서 처리함(부호반대로!)
+        
+        //console.log("브라우저정보:"+navigator.userAgent);
+        //console.log("정보여부:"+(/Firefox/i.test(navigator.userAgent)));
+        
+        // 정규식.test(가져올값) -> 정규식에 쓴 문자 있으면 true
+        /*
+            [ 간단한 정규식 표현기호 ]
+            1. 정규식 내용은 따옴표를 쓰지 않고 슬래쉬를 사용함
+            2. 모든 패턴 문자열을 찾을때 g라는 플래그문자를 사용함
+            3. 대소문자 구분없이 찾을대 i라는 플래그문자를 사용함
+            예) /,/g -> 모든 콤마를 찾아라!
+            /Firefox/i 
+            -> 모든"Firefox"라는 문자를 대소문자 관계없이 찾아라!
+        */
+        if(/Firefox/i.test(navigator.userAgent)){
+            delta = -delta;//변수앞에 마이너스쓰면 부호가 반대됨!
+        } ///////////// if /////////////////////////////////
+        
 
         // 2. 마우스휠 방향에 따라 페이지 번호 증감!
         if (delta < 0) { // -120 아랫방향 스크롤(다음페이지)
@@ -78,10 +113,34 @@ $(function () { ///// jQB /////////////////
 
         console.log("페이지번호:"+pno);
 
+        // 3. 이동할 페이지(.page)의 위치값 알아내기
+        // -> 위치값은 클래스의 순번으로 알아냄-> pno 변수사용!
+        let pgpos = $(".page").eq(pno).offset().top;
+        // offset().top은 현재 선택요소의 top위치값을 숫자로 리턴함!
+
+        //console.log("이동위치:"+pgpos);
+
+        // 4. 실제 이동위치로 스크롤 애니메이션 이동하기
+        $("html,body").stop().animate({
+            scrollTop: pgpos + "px"
+        }, 1200, "easeInOutQuint"); /// animate ///
+
+
+        // 5. 메뉴변경하기 - 페이지 순번과 동일함!
+        // GNB네비게이션 클래스 넣기
+        $(".gnb li").eq(pno).addClass("on")
+            .siblings().removeClass("on");
+
+        // 블릿네비게이션 클래스 넣기
+        $(".bnav li").eq(pno).addClass("on")
+            .siblings().removeClass("on");
+
+
 
 
     }); //////// mousewheel ///////////////////////////////
     //////////////////////////////////////////////////////
+
 
 
 
