@@ -1,13 +1,15 @@
 //과제 - main.js
 
-<<<<<<< Updated upstream
-
+var i;
+ 
 var Img = document.getElementById("mainPhoto");
-=======
+
+/*
 photoSelect[i] = new Image();
 
 var photoSelect = ["image/ring.jpg", "image/earing.jpg", "image/necklace.jpg", "image/bracelet.jpg", "image/broche.jpg"]
->>>>>>> Stashed changes
+*/
+
 
 /////////////////////// 로딩구역 ////////////////////
 window.addEventListener("DOMContentLoaded", function () {
@@ -20,17 +22,33 @@ window.addEventListener("DOMContentLoaded", function () {
 
 let txt = [
     {
-        "제목": "11보석이야",
-        "내용": "11아주좋은거~~~~"
+        "제목": "Diamond Ring",
+        "가격": "$ 200",
+        "내용": "Ring with Diamond, gold 18k."
 },
     {
-        "제목": "22멋진 보석이야",
-        "내용": "22Rmxrerere~~~~"
+        "제목": "Blooming Earing",
+        "가격": "$ 240",
+        "내용": "Shape like blooming flower, branch that made of gold."
+},
+    {
+        "제목": "Pearl Necklace",
+        "가격": "$ 300",
+        "내용": "Golden necklace decorated with shiny pearls."
+},
+    {
+        "제목": "Golden Bracelet",
+        "가격": "$ 150",
+        "내용": "Made of 18K gold. Beautiful to look at."
+},
+    {
+        "제목": "Diamond leaf broche",
+        "가격": "$ 220",
+        "내용": "Made of silver and tiny diamonds"
 }
 
 ]; ////  txt ////////
 
-;
 
 
 function gallist(seq) {
@@ -55,7 +73,7 @@ function gallist(seq) {
     //2. class "phototext"에 이름, 가격 넣기
     //3. phototext에 넣은 텍스트들 css적용
 
-<<<<<<< Updated upstream
+
     //    
     //    if(seq === 0){
     //        console.log("첫번째입니다.")
@@ -78,8 +96,7 @@ function gallist(seq) {
     //        Img.style.backgroundColor = "purple";
     //    };
 }
-=======
+
 function gallist(seq){
     console.log(seq+1 + "번입니다");
 };
->>>>>>> Stashed changes
