@@ -345,8 +345,8 @@ main::after {
     left: 0;
     width: 0;
     margin-left: 0;
-    height: 0;
-    border: 3px solid white;
+    height: 5px;
+    background-color: #fff;
     opacity: 0;
 }
 
@@ -669,7 +669,7 @@ main::after {
     border: 1px solid #c0c0c0;
     width: 600px;
     height: 500px;
-    
+    color: black;
     font-family: "Papyrus";
 }
 
