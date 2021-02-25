@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+    html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        scroll-behavior: smooth;
+    }
+    
+    /*html::-webkit-scrollbar {
+        display: none;
+    }*/
+    
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .gnb {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 2000;
+    }
+    
+    .gnb ul, .gnb li {
+        list-style: none;
+    }
+    
+    .gnb li {
+        float: left;
+    }
+    
+    .gnb li a {
+        color: black;
+        font-family: "Impact";
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 50px;
+    }
+    
+    .part {
+        width: 100%;
+        height: 969px;
+        font-family: "Impact";
+        font-size: 80px;
+        text-align: center;
+    }
+    
+    #part1 {
+        position: relative;
+        background-color: lightcoral;
+    }
+    
+    #part2 {
+        position: relative;
+        background-color: coral;
+    }
+
+    #part3 {
+        position: relative;
+        background-color: darkseagreen;
+    }
+
+    #part4 {
+        position: relative;
+        background-color: cornflowerblue;
+    }
+
+</style>
+
+<!--<script src="updown.js"></script>-->
+<script src="scrollsmooth.js"></script>
+
+</head>
+<body id="body">
+   <div class="gnb">
+       <ul>
+           <li><a href="#part1">1</a></li>
+           <li><a href="#part2">2</a></li>
+           <li><a href="#part3">3</a></li>
+           <li><a href="#part4">4</a></li>
+       </ul>
+   </div>
+    <section id="part1" class="part">part1</section>
+    <section id="part2" class="part">part2</section>
+    <section id="part3" class="part">part3</section>
+    <section id="part4" class="part">part4</section>
+</body>
+</html>
