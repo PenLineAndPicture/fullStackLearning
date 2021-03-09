@@ -193,18 +193,53 @@
     background: url(../images/ban06New.jpg) no-repeat center/cover;
 }
 
-/* 배너 이동 시 보호막 */
-.prot{
+/*배너이동시 보호막*/
+.prot {
     position: absolute;
-    /* 부모? .ban */
+    /*부모? .ban*/
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     /*background-color: #f00;*/
-    /*opacity: 0.5;*/
-    display: none;    /* 처음에 숨김 */
+    /*opacity: .5;*/
+    display: none;
+    /*처음에 숨김*/
 }
+
+/*블릿박스*/
+.indic {
+    position: absolute;
+    left: 1.5%;
+    bottom: 4%;
+    width: 168px;
+    height: 10px;
+    z-index: 1;
+}
+
+.indic > li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 9px;
+    background-color: #ccc;
+    opacity: .5;
+}
+
+.indic a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/*선택블릿on*/
+.indic li.on {
+    background-color: #fff;
+    opacity: 1;
+}
+
+
+
 
 /*3.남자패션영역*/
 .men {

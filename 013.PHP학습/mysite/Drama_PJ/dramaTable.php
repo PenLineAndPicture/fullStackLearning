@@ -178,7 +178,9 @@
         include "DBconn.inc";
         
         /// 2. 전체 테이블 데이터 불러오는 쿼리문 만들기
-        $sql = "SELECT * FROM `drama_info`";
+        $sql = "SELECT * FROM `drama_info` ORDER BY `idx` DESC";
+        // ORDER BY `idx` DESC
+        // `idx` 등록된 글 번호 내림차순(최신글 맨위!)
         
         /// 3. 쿼리문을 DB에 실행 후 결과를 가져온다!
         //  $res변수에 결과를 담는다!
@@ -227,7 +229,13 @@
                     echo 
                     "<tr>".
                         "<td>".$row["idx"]."</td>".
-                        "<td>".$row["dname"]."</td>".
+                        //// 수정페이지로 링크걸기 ////
+                        "<td><a href='modify.php?num=".
+                        $row["idx"].//보내는 유일키
+                        "'>".
+                        $row["dname"].
+                        "</a></td>".
+                        /////////////////////////////
                         "<td>".$row["actors"]."</td>".
                         "<td>".$row["broad"]."</td>".
                         "<td>".$row["gubun"]."</td>".

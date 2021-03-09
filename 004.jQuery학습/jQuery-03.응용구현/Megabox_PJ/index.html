@@ -44,13 +44,50 @@
     <!--2-1.영화메뉴 페이지-->
     <section id="pg1" class="page">
         <!--스크린박스-->
-        <div id="screen">
-            
+        <div id="screen" class="disableselect disabledrag">
+
             <!--동영상-->
             <video id="mv" src="mv/mv1.mp4"></video>
+
+            <!--play,stop버튼-->
+            <div class="btngrp ctrl">
+                <a href="#">
+                    <img src="images/vbt1.png" alt="재생멈춤버튼">
+                </a>
+            </div>
             
+            <!--sound버튼-->
+            <div class="sound ctrl">
+                <a href="#">
+                    <img src="images/speaker_blue.png" alt="스피커">
+                </a>
+            </div>
+            
+            <!--동영상 진행바-->
+            <div class="pBar ctrl">
+                <div class="tBar"></div>
+            </div>
+            
+            <!--동영상 전체시간, 현재진행시간 표시-->
+            <div class="cTime ctrl">
+                <span class="current">01:20</span> / 
+                <span class="duration">03:50</span>
+            </div>
+            
+            <!--볼륨버튼-->
+            <div class="volume ctrl">
+                <span id="bar"></span>
+            </div>
+            
+            <!--확대/축소버튼-->
+            <div class="expand ctrl">
+                <a href="#" title="화면확대하기">▣</a>
+                <a href="#" title="화면축소하기">▦</a>
+            </div>
+            
+
         </div>
-        
+
         <!--갤러리박스-->
         <div class="gbox rbx">
             <img src="images/cast01.jpg" alt="분노의 질주" data-mv="mv1">
@@ -67,9 +104,9 @@
         <a href="" class="abtn rb">
             <img src="images/right_btn.png" alt="오른쪽버튼">
         </a>
-    
-        
-        
+
+
+
     </section>
     <section id="pg2" class="page"></section>
     <section id="pg3" class="page"></section>
