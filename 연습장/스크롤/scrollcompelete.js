@@ -34,7 +34,7 @@ window.onmousewheel = function (e) {
 
     }, 400);
 
-    /*timeout = setTimeout(function () {
+    timeout = setTimeout(function () {
 
         var num = 1;
         var count = 0;
@@ -53,7 +53,7 @@ window.onmousewheel = function (e) {
         }
         
         
-    }, 100);*/
+    }, 100);
 
 
 

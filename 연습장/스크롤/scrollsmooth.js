@@ -14,49 +14,25 @@ window.onmousewheel = function (e) {
     timeout = setTimeout(function () {
         if (e.deltaY > 0) {
             console.log("down");
-            window.scrollBy(0, num * up, 'smooth');
+            window.scrollBy(0, num * up);
         } else {
             console.log("up");
-            window.scrollBy(0, num * down, 'smooth');
+            window.scrollBy(0, num * down);
         }
 
         /////// 광스크롤 방지 ///////
 
-        /*if (psts === 1) return true;
+        if (psts === 1) return true;
 
         psts = 1;
 
         setTimeout(function () {
             psts = 0;
-        }, 100);*/
+        }, 100);
 
         /////// 광스크롤 방지 ///////
 
     }, 400);
-
-    /*timeout = setTimeout(function () {
-
-        var num = 1;
-        var count = 0;
-        
-        
-        if (e.deltaY > 0) {
-            console.log("down");
-            count = +1;
-            
-            location.href = "#part2";
-        }
-        
-        if (e.deltaY < 0) {
-            console.log("down");
-            location.href = "#part1";
-        }
-        
-        
-    }, 100);*/
-
-
-
 };
 
 
