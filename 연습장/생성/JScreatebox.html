@@ -1,0 +1,51 @@
+<!DOCTYPE html>!
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>박스 생성기(Javascript)</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .case {
+            position: relative;
+            margin: 0 auto;
+            padding: 0;
+            
+            width: 900px;
+            height: 600px;
+            
+            overflow: scroll;
+            overflow-x: hidden;
+            border: 5px dashed black;
+        }
+        
+        .box {
+            position: relative;
+            box-sizing: border-box;
+            margin: 5px;
+            width: 50px;
+            height: 50px;
+            
+            border: 3px solid crimson;
+            background-color: lime;
+        }
+    </style>
+
+    <script>
+        function cc(){
+            /*document.createAttribute(".box").appendChild("case")*/
+        };
+    </script>
+</head>
+<body>
+    <button class="cbtn" onclick="cc">생성</button>
+    <div class="case">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

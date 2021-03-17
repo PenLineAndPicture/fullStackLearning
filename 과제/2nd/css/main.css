@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -12,38 +13,218 @@ section {
     width: 100%;
     height: 100%;
     outline: 1px dashed red;
-    
+    font-weight: bold;
+    color: white;
+
     background-color: #242424;
     overflow: hidden;
 }
 
-.case {
+footer {
+    width: 100%;
+    height: 300px;
+
+    color: white;
+    background-color: black;
+}
+
+
+
+/********************************************************************* 고정메뉴 설정 ***********************************************************************/
+
+.tmenu {
+    position: fixed;
+    margin: 20px;
+    padding: 0;
+    left: 0;
+    
+    width: 50px;
+    height: 50px;
+    
+    z-index: 9999;
+    
+    outline: 1px solid white;
+}
+
+.mlist {
+    position: absolute;
+    margin: 10px 0 0 0;
+    padding: 0;
+    left: 10px;
+    top: 100%;
+    
+    list-style: none;
+    outline: 1px solid lime;
+}
+
+.mlist::before {
+    position: absolute;
+    display: block;
+    content: "";
+    
+    margin-right: 8px;
+    right: 100%;
+    
+    width: 3px;
+    height: 100%;
+    
+    background-color: #fff;
+}
+
+.mlist li {
+    position: relative;
+    width: 200px;
+    height: 0;
+    padding-left: 10px;
+    
+    font-size: 20px;
+    line-height: 80px;
+    color: white;
+    transition: .5s;
+    overflow: hidden;
+    
+    outline: 1px solid cyan;
+}
+
+.tmenu:hover .mlist li {
+    height: 80px;
+}
+
+/********************************************************************* 고정메뉴 설정 ***********************************************************************/
+
+
+/********************************************************************* 1번째 메인 ***********************************************************************/
+
+.hcase {
     position: relative;
     margin: 0;
+    margin-top: 20px;
     padding: 0;
-    width: 1200px;
-    height: 700px;
+    margin-bottom: 100px;
     
+    width: 100%;
+    height: 100px;
+    
+    outline: 1px solid red;
+}
+
+.lcase {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 0;
+    margin-right: 100px;
+    
+    width: 200px;
+    height: 100%;
+    
+    outline: 1px solid yellow;
+}
+
+.mlogo {
+    position: relative;
+    width: 100%;
+    height: 70%;
+    
+    outline: 1px solid purple;
+}
+
+.eb {
+    position: relative;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 1200px;
+    height: 600px;
+    
+    outline: 1px solid violet;
+}
+
+/********************************************************************* 1번째 메인 ***********************************************************************/
+
+
+/********************************************************************* 2번째 메인 ***********************************************************************/
+
+.b1 {
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     
-    outline: 2px solid white;
-}
-
-.worldmap {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    outline: 1px solid lime;
-    background-color: rgb(0, 255, 255, 0.5);
-}
-
-footer {
-    width: 100%;
-    height: 200px;
+    width: 1200px;
+    height: 600px;
     
-    background-color: black;
+    outline: 1px dashed cyan;
 }
+
+/********************************************************************* 2번째 메인 ***********************************************************************/
+
+
+/********************************************************************* 3번째 메인 ***********************************************************************/
+
+.m1 {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 1400px;
+    height: 900px;
+    
+    outline: 1px solid lemonchiffon;
+}
+
+/********************************************************************* 3번째 메인 ***********************************************************************/
+
+
+/********************************************************************* 4번째 메인 ***********************************************************************/
+
+.cl {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 100%;
+    height: 600px;
+    
+    outline: 1px solid lawngreen;
+}
+
+
+/********************************************************************* 4번째 메인 ***********************************************************************/
+
+
+/********************************************************************* 5번째 메인 ***********************************************************************/
+
+.gal {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 600px;
+    height: 600px;
+    
+    outline: 5px double blue;
+}
+
+/********************************************************************* 5번째 메인 ***********************************************************************/
+
+
+/********************************************************************* 6번째 메인 ***********************************************************************/
+
+.help {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 1200px;
+    height: 600px;
+    
+    outline: 3px dashed crimson;
+}
+
+/********************************************************************* 6번째 메인 ***********************************************************************/
