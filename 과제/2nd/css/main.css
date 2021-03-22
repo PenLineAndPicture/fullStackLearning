@@ -109,11 +109,10 @@ footer {
 }
 
 .lcase {
-    position: absolute;
+    position: relative;
     margin: 0;
     padding: 0;
-    right: 0;
-    margin-right: 100px;
+    margin-left: 1600px;
     
     width: 200px;
     height: 100%;
@@ -148,14 +147,52 @@ footer {
 
 .b1 {
     position: relative;
+    display: table;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     
     width: 1200px;
-    height: 600px;
+    height: 800px;
+    
+    table-layout: fixed;
     
     outline: 1px dashed cyan;
+}
+
+.b1_c {
+    position: relative;
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    
+    border: 1px solid gold;
+    
+    transition: all .5s ease-in-out;
+}
+
+.b1_c:first-child {
+    background-color: green;
+}
+
+.b1_c:nth-child(2) {
+    background-color: red;
+}
+
+.b1_c:nth-child(3) {
+    background-color: cyan;
+}
+
+.b1_c:nth-child(4) {
+    background-color: yellow;
+}
+
+.b1_c:nth-child(5) {
+    background-color: mediumvioletred;
+}
+
+.b1_c:last-child {
+    background-color: pink;
 }
 
 /********************************************************************* 2번째 메인 ***********************************************************************/
@@ -173,6 +210,60 @@ footer {
     height: 900px;
     
     outline: 1px solid lemonchiffon;
+}
+
+.ex0 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+.intro_wrap {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin: 0;
+    padding: 0;
+    
+    border: 1px solid crimson;
+    
+    overflow: hidden;
+}
+
+.union {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    
+    width: 0;
+    height: 30px;
+    
+    transition: width .3s ease-out;
+    border: 1px solid lime;
+}
+
+.ex0:hover .intro_wrap .union {
+    width: 100px;
+}
+
+
+.explain {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    
+    height: 0;
+    
+    transition: height .3s ease-out .35s;
+    border: 1px solid gold;
+}
+
+.ex0:hover .intro_wrap .explain {
+    height: 400px;
 }
 
 /********************************************************************* 3번째 메인 ***********************************************************************/
