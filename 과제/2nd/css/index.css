@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+/*font-family: 'Nanum Myeongjo', serif;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&display=swap');
+/*font-family: 'Gothic A1', sans-serif;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&family=Noto+Sans+KR:wght@700&display=swap');
+/*font-family: 'Noto Sans KR', sans-serif;*/
 html, body {
     margin: 0;
     padding: 0;
@@ -6,79 +14,288 @@ html, body {
 }
 
 body {
-    background: url(../image/bg_jungle_1.png) no-repeat center/cover;
+    overflow: hidden;
 }
 
-body::after {
+
+.spark {
     position: absolute;
-    content: "";
-    display: block;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0, 0, 0, 0.5);
+    width: 1920px;
     z-index: -1;
+    
+    transform: rotateY(180deg);
 }
 
 .ulogo {
-    position: absolute;
-    right: 0;
-    margin: 15px;
-    padding: 0;
-    width: 240px;
-    height: 80px;
-    
-    box-sizing: border-box;
-    /*outline: 2px dotted white;*/
-}
-
-.ulogo::before {
-    position: absolute;
-    content:"";
-    display: block;
-    right: 100%;
+    position: relative;
     margin: 0;
     padding: 0;
-    margin-right: 20px;
-    width: 1620px;
-    height: 2px;
-    top: 48%;
-    transform: translateY(-50%);
-    background-color: #fff;  
-}
-
-.ulogo img {
+    
     width: 100%;
 }
 
-.wrap {
+.logo_wrap {
     position: relative;
-    margin: 0 auto;
+    top: 0;
+    left: 0;
+    margin: 20px 0 0 30px;
     padding: 0;
-    width: 1240px;
-    outline: 2px solid red;
+    float: left;
     
-    top: 54.5%;
-    transform: translateY(-50%);
+    box-sizing: border-box;
 }
 
-.wrap::after {
+.logo_wrap::after {
     content: "";
     display: block;
     clear: both;
 }
 
-.cont {
-    margin: 5px 5px;
-    width: 300px;
-    height: 700px;
-    box-sizing: border-box;
-    outline: 1px solid white;
+.logo {
+    height: 150px;
+}
+
+.ulogo::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.m_image {
+    position: absolute;
+    top: -180px;
+    left: 450px;
     
+    transform: rotateY(180deg);
+    
+    z-index: 2;
+}
+
+.act_title {
+    position: relative;
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    padding-left: 20px;
+    
+    width: 100%;
+    height: 30px;
+    
+    color: #000;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    font-family: 'Nanum Myeongjo', serif;
+    background-color: #fff;
+}
+
+
+
+.comment {
+    position: absolute;
+    top: 350px;
+    left: 300px;
+    
+    width: 900px;
+    height: 200px;
+    
+    color: #fff;
+    font-family: 'Nanum Myeongjo', serif;
+    font-style: italic;
+    font-size: 45px;
+}
+
+.blink {
+    animation: blinked .5s infinite alternate ;
+}
+
+@keyframes blinked {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        opacity: 1;
+    }
+}
+
+.c_txt {
+    position: relative;
+}
+
+.c_txt:first-child {
     float: left;
 }
 
-#ev1 {
-    background: url(../image/ev1.png) no-repeat top left/100%;
+.c_txt:last-child {
+    float: right;
+    margin-top: 20px;
+}
+
+
+
+
+.pv_case {
+    position: absolute;
+    margin-top: 270px;
+    left: 1020px;
+}
+
+.pv_case::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.pv {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    float: left;
+    
+    width: 80px;
+    height: 35px;
+    line-height: 32px;
+    
+    box-sizing: border-box;
+    border: 1px solid #c2c2c2;
+    
+    text-align: center;
+    font-family: 'Impact';
+    font-style: normal;
+    font-size: 20px;
+    background-color: rgb(0, 0, 0, 0.5);
+    color: white;
+    
+    z-index: 10;
+}
+
+.pv:last-child {
+    margin-left: 100px;
+}
+
+.pv:hover {
+    background-color: rgb(255, 255, 255, 0.5);
+    color: black;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+
+
+
+
+.char_case {
+    position: absolute;
+    padding: 10px;
+    width: 500px;
+    height: 200px;
+    bottom: 30px;
+    left: 1450px;
+    
+    box-sizing: border-box;
+    background-color: rgb(0, 0, 0, 0.7);
+    z-index: 3;
+}
+
+.char_case::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+.char_class {
+    position: relative;
+    float: left;
+    height: 180px;
+    box-sizing: border-box;
+    border: 1px solid #c2c2c2;
+}
+
+.char_class img {
+    height: 100%;
+}
+
+.char_grade {
+    position: relative;
+    top: -20px;
+    float: left;
+}
+
+.star {
+    position: relative;
+    margin: 0;
+    margin-left: 10px;
+    padding: 0;
+    list-style: none;
+}
+
+.star li {
+    position: absolute;
+    float: left;
+    color: #fff;
+    text-shadow: 5px 5px 5px black;
+    font-size: 40px;
+    transform: scaleX(0.95) rotateZ(20deg);
+}
+
+
+.star li:first-child {
+    z-index: 6;
+}
+.star li:nth-child(2) {
+    left: 20px;
+    z-index: 5;
+}
+.star li:nth-child(3) {
+    left: 40px;
+    z-index: 4;
+}
+.star li:nth-child(4) {
+    left: 60px;
+    z-index: 3;
+}
+.star li:nth-child(5) {
+    left: 80px;
+    z-index: 2;
+}
+.star li:last-child {
+    left: 100px;
+}
+
+
+.char_name {
+    position: absolute;
+    float: left;
+    bottom: 10px;
+    left: 205px;
+}
+
+.name_en {
+    position: absolute;
+    top: -15px;
+    color: white;
+    font-family: "Impact";
+    font-size: 35px;
+    letter-spacing: 2px;
+}
+
+.name_ko {
+    margin-top: 5px;
+    color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 80px;
+}
+
+
+
+
+.footer_logo {
+    position: absolute;
+    margin-top: 620px;
+    left: 20px;
+    z-index: 20;
 }
