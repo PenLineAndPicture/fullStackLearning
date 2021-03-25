@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+/*font-family: 'Nanum Myeongjo', serif;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&display=swap');
+/*font-family: 'Gothic A1', sans-serif;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&family=Noto+Sans+KR:wght@700&display=swap');
+/*font-family: 'Noto Sans KR', sans-serif;*/
+
+
+
+
+
 html,
 body {
     margin: 0;
@@ -32,7 +45,7 @@ footer {
 
 /********************************************************************* 고정메뉴 설정 ***********************************************************************/
 
-.tmenu {
+/*.tmenu {
     position: fixed;
     margin: 20px;
     padding: 0;
@@ -88,56 +101,148 @@ footer {
 
 .tmenu:hover .mlist li {
     height: 80px;
-}
+}*/
 
 /********************************************************************* 고정메뉴 설정 ***********************************************************************/
 
 
 /********************************************************************* 1번째 메인 ***********************************************************************/
 
+.case1 {
+    background: url(../image/bg_rhodescom.png) no-repeat top left/100%;
+}
+
+
 .hcase {
     position: relative;
     margin: 0;
     margin-top: 20px;
     padding: 0;
-    margin-bottom: 100px;
     
     width: 100%;
-    height: 100px;
     
-    outline: 1px solid red;
+    overflow: hidden;
+    
+    /*outline: 1px solid red;*/
 }
 
 .lcase {
     position: relative;
     margin: 0;
     padding: 0;
-    margin-left: 1600px;
+    left: 50px;
     
-    width: 200px;
-    height: 100%;
+    height: 80%;
     
-    outline: 1px solid yellow;
+    /*outline: 1px solid yellow;*/
 }
+
+.lcase::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+/*.lcase::after {
+    position: absolute;
+    content: "";
+    display: block;
+    background-color: #fff;
+    top: 50%;
+    left: 100%;
+    margin-left: 50px;
+    
+    width: 1470px;
+    height: 3px;
+    
+}*/
 
 .mlogo {
     position: relative;
+    margin-bottom: 10px;
     width: 100%;
-    height: 70%;
     
-    outline: 1px solid purple;
+    /*outline: 1px solid purple;*/
 }
 
-.eb {
+.mlogo img {
+    width: 300px;
+}
+
+.sublogo {
+    float: left;
+    padding: 5px 0 5px 10px;
+    height: 20%;
+    color: #fff;
+    background-color: #000;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 15px;
+}
+
+.main_screen_case {
     position: relative;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px;
+    
+    width: 1800px;
+    height: 720px;
+    
+
+    border-radius: 2px;
+    background-color: rgb(0, 0, 0, 0.7);
+}
+
+.amiya {
+    position: absolute;
+    top: -100px;
+    left: 800px;
+    width: 1200px;
+    
+    transform: /*rotateY(180deg)*/ scale(1.2);
+}
+
+.n_case {
+    position: absolute;
+    margin: 0;
+    padding: 0;
     
     width: 1200px;
-    height: 600px;
+    height: 696px;
     
-    outline: 1px solid violet;
+    /*background-color: rgb(255, 255, 255, 0.6);*/
+}
+
+.notice_small {
+    margin: 0;
+    padding: 0;
+    width: 300px;
+    font-family: 'Nanum Myeongjo', serif;
+    list-style: none;
+    
+    overflow: hidden;
+}
+
+.notice_small span {
+    margin-bottom: 10px;
+    display: block;
+    padding-left: 10px;
+    
+    height: 30px;
+    line-height: 30px;
+    
+    background-color: #fff;
+    color: #000;
+}
+
+.notice_small li {
+    height: 0;
+    transition: all .2s ease-out;
+}
+
+.notice_small:hover li {
+    height: 30px;
 }
 
 /********************************************************************* 1번째 메인 ***********************************************************************/
@@ -147,22 +252,21 @@ footer {
 
 .b1 {
     position: relative;
-    display: table;
+    padding: 10px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     
-    width: 1200px;
+    width: 1400px;
     height: 800px;
     
     table-layout: fixed;
     
-    outline: 1px dashed cyan;
+    outline: 2px solid white;
 }
 
 .b1_c {
     position: relative;
-    display: table-cell;
     margin: 0;
     padding: 0;
     
@@ -171,28 +275,24 @@ footer {
     transition: all .5s ease-in-out;
 }
 
+.b1_c::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
 .b1_c:first-child {
-    background-color: green;
-}
-
-.b1_c:nth-child(2) {
-    background-color: red;
-}
-
-.b1_c:nth-child(3) {
-    background-color: cyan;
-}
-
-.b1_c:nth-child(4) {
-    background-color: yellow;
-}
-
-.b1_c:nth-child(5) {
-    background-color: mediumvioletred;
+    background-color: rgb(255, 255, 255, 0.7);
+    width: 24.5%;
+    height: 100%;
+    float: left;
 }
 
 .b1_c:last-child {
-    background-color: pink;
+    background-color: rgb(255, 255, 255, 0.7);
+    width: 74.5%;
+    height: 100%;
+    float: right;
 }
 
 /********************************************************************* 2번째 메인 ***********************************************************************/
@@ -289,6 +389,30 @@ footer {
 
 /********************************************************************* 5번째 메인 ***********************************************************************/
 
+.case5::before {
+    position: absolute;
+    display: block;
+    content: "";
+    background: url(../image/festival.png) no-repeat top left/cover;
+    filter: blur(5px);
+    width: 100%;
+    height: 100%;
+}
+
+.case5::after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    left: 0;
+    
+    background-color: rgb(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    
+    z-index: 1;
+}
+
 .gal {
     position: relative;
     top: 50%;
@@ -299,23 +423,12 @@ footer {
     height: 600px;
     
     outline: 5px double blue;
+    
+    z-index: 2;
 }
 
 /********************************************************************* 5번째 메인 ***********************************************************************/
 
 
-/********************************************************************* 6번째 메인 ***********************************************************************/
+/********************************************************************* 푸터 ***********************************************************************/
 
-.help {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-    width: 1200px;
-    height: 600px;
-    
-    outline: 3px dashed crimson;
-}
-
-/********************************************************************* 6번째 메인 ***********************************************************************/
