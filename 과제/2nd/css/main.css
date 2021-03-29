@@ -7,8 +7,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&family=Noto+Sans+KR:wght@700&display=swap');
 /*font-family: 'Noto Sans KR', sans-serif;*/
 
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap');
+/*font-family: 'Nanum Gothic', sans-serif;*/
 
 
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
+/*font-family: 'Nanum Gothic Coding', monospace;*/
 
 
 html,
@@ -17,6 +21,7 @@ body {
     padding: 0;
     width: 100%;
     height: 100%;
+    overflow-X: hidden;
 }
 
 section {
@@ -109,7 +114,7 @@ footer {
 /********************************************************************* 1번째 메인 ***********************************************************************/
 
 .case1 {
-    background: url(../image/bg_rhodescom.png) no-repeat top left/100%;
+    background: url(../image/bg_rhodescom.png) no-repeat top left/1920px;
 }
 
 
@@ -143,19 +148,6 @@ footer {
     clear: both;
 }
 
-/*.lcase::after {
-    position: absolute;
-    content: "";
-    display: block;
-    background-color: #fff;
-    top: 50%;
-    left: 100%;
-    margin-left: 50px;
-    
-    width: 1470px;
-    height: 3px;
-    
-}*/
 
 .mlogo {
     position: relative;
@@ -179,70 +171,297 @@ footer {
     font-size: 15px;
 }
 
-.main_screen_case {
+/**************** 중심 잡아주는 큰 케이스 ****************/
+
+.d_case {
+    position: relative;
+    margin: 0 auto;
+    width: 1400px;
+}
+
+/*********************** 좌측 메뉴 케이스 ***********************/
+
+.schadule_case {
     position: relative;
     box-sizing: border-box;
-    margin: 0 auto;
-    margin-top: 20px;
+    margin: 10px 0 0 20px;
     padding: 10px;
+    left: 0;
     
-    width: 1800px;
+    width: 900px;
     height: 720px;
     
-
     border-radius: 2px;
-    background-color: rgb(0, 0, 0, 0.7);
+    
+    transform: translateX(-230px)perspective(1800px) rotateY(20deg);
+    transform-origin: left;
+    
+    /*background-color: rgb(0, 0, 0, 0.7);*/
 }
 
-.amiya {
-    position: absolute;
-    top: -100px;
-    left: 800px;
-    width: 1200px;
+
+.sch_case {
+    position: relative;
+    margin: 15px 0 0 0;
+    padding: 5px;
+    padding-left: 7px;
     
-    transform: /*rotateY(180deg)*/ scale(1.2);
+    width: 20px;
+    height: 180px;
+    
+    box-sizing: border-box;
+    
+    background-color: #00a2f8;
 }
 
-.n_case {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    
-    width: 1200px;
-    height: 696px;
-    
-    /*background-color: rgb(255, 255, 255, 0.6);*/
+.sch_case:nth-child(2) {
+    background-color: #036569;
 }
 
-.notice_small {
-    margin: 0;
-    padding: 0;
+.sch_case:last-child {
+    background-color: crimson;
+}
+
+.sch_name {
+    position: relative;
     width: 300px;
-    font-family: 'Nanum Myeongjo', serif;
-    list-style: none;
+    height: 50px;
+    line-height: 50px;
+    padding: 2px;
+    padding-left: 15px;
     
-    overflow: hidden;
+    color: #000;
+    background-color: #fff;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 40px;
+    
+    z-index: 2;
 }
 
-.notice_small span {
-    margin-bottom: 10px;
+.sch_name span {
+    background-color: #000;
+}
+
+.sch_detail {
+    position: relative;
+    top: -40px;
+    padding-top: 40px;
+    width: 500px;
+    height: 155px;
+    
+    box-sizing: border-box;
+    
+    background-color: rgb(0, 0, 0, 0.5);
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.time_case {
+    padding-left: 20px;
+    width: 550px;
+    height: 100px;
+    line-height: 90px;
+    color: #fff;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 60px;
+    background-color: black;
+    
+    transform-origin: left;
+}
+
+.sch_detail ul {
+    position: absolute;
+    margin: 0;
+    margin-left: 18px;
+    padding: 0;
+    list-style: none;
+}
+
+.sch_detail ul::after {
+    content: "";
     display: block;
+    clear: both;
+}
+
+.sch_detail ul li {
+    margin: 10px;
+    margin-top: 10px;
+    float: left;
+    font-size: 20px;
+    
+    outline: 1px solid white;;
+}
+
+.event_name {
+    position: absolute;
+}
+
+.event_case .banner {
+    position: relative;
+    padding: 10px;
+    padding-left: 15px;
+    width: 700px;
+    height: 170px;
+    
+    box-sizing: border-box;
+    
+    background-color: rgb(0, 0, 0, 0.5);  
+}
+
+.event_case .banner .banner_img {
+    width: 100%;
+    height: 100%;
+    background: url(../image/banner2.jfif) no-repeat top left/100% ;
+    box-sizing: border-box;
+}
+
+
+.notice_go {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-bottom: 10px;
     padding-left: 10px;
     
+    width: 120px;
     height: 30px;
     line-height: 30px;
     
-    background-color: #fff;
+    background-color: rgb(255, 255, 255, 0.9);
     color: #000;
-}
-
-.notice_small li {
-    height: 0;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 25px;
+    
     transition: all .2s ease-out;
 }
 
-.notice_small:hover li {
-    height: 30px;
+.notice_go:hover {
+    color: #fff;
+    background-color: rgb(0, 0, 0, 0.9);
+}
+
+/******* 오른쪽 ********/
+
+.amiya_standing {
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+    width: 100px;
+    height: 100%;
+    
+    outline: 2px solid lime;
+}
+
+.amiya_standing img {
+    position: absolute;
+    right: 0;
+    
+    transform: scale(1.2) translate(350px, -60px);
+}
+
+.amiya_standing .saying {
+    position: absolute;
+    padding: 10px;
+    width: 400px;
+    height: 150px;
+    
+    top: 300px;
+    right: 80px;
+    
+    background-color: rgb(0, 0, 0, 0.7);
+    font-family: 'Nanum Gothic Coding', monospace;
+}
+
+.saying::after {
+    position: absolute;
+    display: block;
+    content:"▼";
+    
+    top: 140px;
+    right: 10px;
+    
+    color: white;
+    
+    font-size: 20px;
+    
+    animation: arrowblink .7s ease-in infinite alternate;
+}
+
+@keyframes arrowblink {
+    from {
+        opacity: 1;
+    }
+    
+    to {
+        opacity: 0;
+    }
+}
+
+
+.case1_symbol_case {
+    position: absolute;
+    padding: 10px;
+    width: 450px;
+    height: 200px;
+    
+    top: 500px;
+    right: 80px;
+    
+    background-color: rgb(0, 0, 0, 0.7);
+    font-family: 'Nanum Gothic Coding', monospace;
+}
+
+.code_serial {
+    position: relative;
+    left: 0;
+    width: 300px;
+    font-family: "courier";
+    font-weight: 100;
+    text-align: right;
+}
+
+.code_serial span {
+}
+
+.c_cell {
+    position: relative;
+    background-color: #fff;
+    color: #000;
+    font-family: 'Nanum Gothic Coding', monospace;
+    width: 300px;
+    height: 70px;
+}
+
+.c_symbol {
+    position: absolute;
+    margin-left: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: url(../image/caster.png) no-repeat top left/cover;
+    
+    float: left;
+    
+}
+
+.c_cell::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.c_name {
+    position: relative;
+    margin-right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    float: right;
+    text-align: left;
+    font-size: 50px;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 800;
 }
 
 /********************************************************************* 1번째 메인 ***********************************************************************/
@@ -299,6 +518,21 @@ footer {
 
 
 /********************************************************************* 3번째 메인 ***********************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+/********************************************************************* 3번째 메인 ***********************************************************************/
+
+
+/********************************************************************* 4번째 메인 ***********************************************************************/
 
 .m1 {
     position: relative;
@@ -366,10 +600,10 @@ footer {
     height: 400px;
 }
 
-/********************************************************************* 3번째 메인 ***********************************************************************/
-
-
 /********************************************************************* 4번째 메인 ***********************************************************************/
+
+
+/********************************************************************* 5번째 메인 ***********************************************************************/
 
 .cl {
     position: relative;
@@ -384,10 +618,10 @@ footer {
 }
 
 
-/********************************************************************* 4번째 메인 ***********************************************************************/
-
-
 /********************************************************************* 5번째 메인 ***********************************************************************/
+
+
+/********************************************************************* 6번째 메인 ***********************************************************************/
 
 .case5::before {
     position: absolute;
@@ -427,7 +661,7 @@ footer {
     z-index: 2;
 }
 
-/********************************************************************* 5번째 메인 ***********************************************************************/
+/********************************************************************* 6번째 메인 ***********************************************************************/
 
 
 /********************************************************************* 푸터 ***********************************************************************/
