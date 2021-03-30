@@ -2,6 +2,107 @@
 
 $(function () { /// jQB //////////////////
 
+    ////// 햄버거 버튼 클릭시 전체메뉴 보이기/숨기기 /////
+    // 대상: #ham
+    $("#ham").click(function () {
+
+        // 1. 햄버거 버튼에 class="on" 넣기/빼기
+        $(this).toggleClass("on");
+
+        // 2. 전체메뉴박스 서서히 보이기/숨기기
+        $(".mbox").fadeToggle(400);
+
+        // 3. 동영상 재생/멈춤(get(0) 또는 [0]으로 선택)
+
+        // 모바일이 아닐때만 실행
+        if (!mob) {
+
+            // 동영상 재상/멈춤을 위한 햄버거 버튼 class="on"여부
+            let isHAM = $(this).is(".on");
+            console.log("햄버거?" + isHAM);
+
+            if (isHAM) $(".bgm")[0].play();
+            else $(".bgm")[0].pause();
+
+        } ///////// if /////////////////
+
+
+    }); //////// click /////////////////
+
+
+
+
+    ///////////////////////////////////////////
+    /// GNB a요소 클릭시 스크롤 애니메이션 하기 ////
+    // a요소에 href="#아이디명" 하면 바로이동은 가능
+    // 그러나 스크롤 애니메이션은 되지 않는다!!!
+    // 제이쿼리에서 이것을 해주자!
+    // 클릭 이벤트 대상: .gnb a 동시에 .bnav a
+    ///////////////////////////////////////////
+    $("#gnb a,.bnav a").click(function (e) {
+
+        e.preventDefault(); //a이동막기!
+
+        // 1.클릭된 순번 알아내기(클릭된 a의 부모 li순번)
+        // 알아낸 순번을 전역 페이지번호(pno)에 넣기!
+        pno = $(this).parent().index();
+
+        // 만약 #gnb a이면 1을 더함(배너메뉴가 없으므로!)
+        let isGNB = $(this).parent().parent().is("ul#gnb");
+        // parent()를 두번쓴것은 li위에 ul인지 ol인지로 올라가서
+        // is() 메서드로 이것이 ul#gnb 인것을 확인한다!
+        // 이것이 맞으면 true가 리턴된다!
+        //console.log("부모가#gnb인가?"+isGNB);
+
+        if (isGNB) pno++; //1을 더함!
+
+        //console.log("클릭순번:" + pno);
+
+
+        // 2.기존 위치값 읽어오기 변경!!!!
+        // 전체윈도우 높이값(winH)에 페이지번호를 곱한다!
+        let pgpos = winH * pno;
+
+        // 3. 스크롤 애니메이션으로 페이지이동하기
+        // scrollTop 속성은 세로 스크롤위치값(제이쿼리용!)
+        // 스크롤 이동대상: html,body 
+        // (범용선택요소: 즉, 여러브라우저에서 공통사용됨!)
+        $("html,body").stop().animate({
+            scrollTop: pgpos + "px"
+        }, 1200, "easeInOutQuint", pageAction);
+        ///// animate /////
+        // 맨 끝에 콜백함수로 페이지액션함수를 호출한다!
+        // stop()을 사용하여 여러개를 클릭했을때 마지막 선택
+        // 만 남아서 처리되도록 중간에 쌓인 애니메이션 지움!
+
+        // 4. GNB메뉴의 a요소 클릭했을때 클릭된
+        // a요소의 li에 class를 "on"으로 넣으면
+        // 이미 셋팅된 CSS의 디자인이 적용되어
+        // 라임색 윗줄의 크기가 조금 커진 디자인이
+        // 적용되어 마우스 오버시와 동일 디자인이 유지된다
+        // 이것을 하는 이유는 현재 페이지가 무엇인지
+        // 표시하기 위함이다!
+
+        // 두개의 네비게이션을 동시에 변경하기
+
+        // GNB네비게이션 클래스 넣기
+        if (pno === 0) { //첫번째 메뉴 이므로 모든 class="on"지우기
+            $("#gnb li").removeClass("on");
+        } ///// if /////////////////////////
+        else { //해당순번보다 1작게 해야 3개의 gnb중에서 매칭됨!
+            $("#gnb li").eq(pno - 1).addClass("on")
+                .siblings().removeClass("on");
+        } ////// else ////////////////////////
+
+        // 블릿네비게이션 클래스 넣기
+        $(".bnav li").eq(pno).addClass("on")
+            .siblings().removeClass("on");
+
+    }); ///////// click ///////////////////
+
+
+
+
     // 슬라이드 //////////
     let sld = $(".slide");
 
@@ -45,16 +146,35 @@ $(function () { /// jQB //////////////////
     $(window).resize(function () {
 
         console.log("리사이즈!");
+        
+        // 사이즈가 변경되면 페이지 자체를 리로드함!
+        location.reload();
 
         // 윈도우 크기 재설정!
-        win = $(window).width();
+        //win = $(window).width();
+        
+        // 모바일 코드 변경!
+//        mob = 0;
+//        if (win <= 1024) mob = 2;
+//        if (win <= 500) mob = 1;
+//        console.log("모바일:" + mob);
 
     }); ////// resize 메서드 /////////////////
 
+    // 터치이벤트 연속발생방지
+    let protTch = 0;
+    
     //////////// 드래그 이벤트 함수 ////////////
     sld.on("dragstop touchend", function () {
+        
+        // 터치이벤트일때 연속 두번 발생방지
+        if(protTch) return;
+        protTch = 1;//잠금!
+        setTimeout(function(){
+            protTch = 0;//해제!
+        },500);//// setTimeout //////
 
-        //console.log("드래그끝!");
+        console.log("드래그끝!");
 
         // 자동슬라이드 지우기!!!
         clearAuto();
@@ -152,7 +272,6 @@ $(function () { /// jQB //////////////////
     }); /////// dragstop, touchend 이벤트함수 ///////
     //////////////////////////////////////////////
 
-
     /*//////////////////////////////////////////////
         함수명: autoSlide
         기능: 슬라이드 자동넘기기
@@ -194,6 +313,50 @@ $(function () { /// jQB //////////////////
             .siblings().removeClass("on");
 
     }; //////// autoSlide 함수 ///////////////////////
+    ////////////////////////////////////////////////
+
+    /*//////////////////////////////////////////////
+        함수명: goRight
+        기능: 슬라이드 오른쪽이동하기
+    */ //////////////////////////////////////////////
+    let goRight = function () {
+
+        // 슬라이드 오른쪽이동하기 //
+        //(드래그이동 else if문과 동일) 
+
+        // 광드래그 막기용 커버작동!
+        prot.show();
+
+        // 오른쪽이동 애니메이션 : 0px이동과 동일!
+        sld.stop().animate({
+                left: "0px"
+            }, 1500, "easeOutCubic",
+            function () { /// 애니후 ////
+                // 이동 후 앞에 아무것도 없으므로
+                // 맨뒤li를 맨 앞으로 이동후 left값을 -100%변경
+                // 처음과 같은 상태로 만들어준다!!!
+                $(this).prepend($("li", this).last())
+                    .css({
+                        left: -win + "px"
+                    }); /////// css /////////
+
+                // 광드래그 커버제거!
+                prot.hide();
+
+                // 배너타이틀 등장함수 호출!
+                banTit();
+
+            }); /////// animate //////////
+
+        //배너블릿 순번감소
+        bseq--;
+        if (bseq === -1) bseq = 5; //한계수
+
+        /// 블릿 해당순번 li에 class "on"넣기 ///
+        $(".indic li").eq(bseq).addClass("on")
+            .siblings().removeClass("on");
+
+    }; //////// goRight 함수 ///////////////////////
     ////////////////////////////////////////////////
 
 
@@ -257,12 +420,22 @@ $(function () { /// jQB //////////////////
         // 대상: .slide li
         // 실제배너는 맨앞에 하나가 있고 두번째 이므로 1번이다!
         sld.find("li").eq(1)
-            .append('<h2 class="btit"></h2>');
+            .append('<h2 class="btit disableselect disabledrag"></h2>');
+        // class명에 disableselect,disabledrag는
+        // 드래그시 글자가 영역잡히는 것을 막기위한 css
+        // 클랙스 적용이다!
 
         // 2-0.슬라이드 이미지에 따라 글자위치 조정하기
         // 2,3번 슬라이드만 오른쪽이고 나머지는 왼쪽임
         let tpos = "20%"; //왼쪽기준
         if (bseq === 1 || bseq === 2) tpos = "70%";
+
+        // 모바일일경우 중앙으로 보내기
+        if (mob) tpos = "50%";
+
+        // 글자크기
+        let fz = "4vw";
+        if (mob) fz = "7vw";
 
         // 2.생성된 h2.btit 요소에 html로 글자넣기
         // 글자는 bantxt 배열변수에 이미셋팅함!
@@ -279,7 +452,7 @@ $(function () { /// jQB //////////////////
                 left: tpos,
                 // 오른쪽,왼쪽 변경값을 변수로 설정함!
                 transform: "translate(-50%,-50%)",
-                font: "bold 4vw Verdana",
+                font: "bold " + fz + " Verdana",
                 color: "#fff",
                 textShadow: "1px 1px 3px #777",
                 whiteSpace: "nowrap",
@@ -302,6 +475,78 @@ $(function () { /// jQB //////////////////
     setTimeout(banTit, 2000);
 
 
+
+    // 마우스 팔로워 플러그인 적용하기
+    // 움직일 대상: .btna
+    // 설정범위는 움직일 대상이 포함된 부모요소
+
+    $(".btna").mousefollower();
+    // 주의사항!
+    // mousefollower() 메서드를 적용하는 것은
+    // 마우스 따라다닐 범위 요소를 선택하는 것이다!
+    // 그 안에 .badge 라는 것이 실제로 따라다닌다!
+    // 클래스명 badge를 이 플러그인의 설정에 따라
+    // 반드시 사용해야 한다!
+
+    $(".btna").hover(
+            function () { // over
+
+                // 흰원 나타나기
+                $(".inside", this).css({
+                    transform: "scale(1)"
+                }); //// css ////////////
+
+                // 글자 나타나기
+                $(".bbtit", this).css({
+                    transform: "translate(-50%, -50%) scale(1)"
+                })
+
+            },
+            function () { // out
+
+                // 흰원 사라지기
+                $(".inside", this).css({
+                    transform: "scale(0)"
+                }); //// css ////////////
+
+                // 글자 사라지기
+                $(".bbtit", this).css({
+                    transform: "translate(-50%, -50%) scale(0)"
+                })
+
+            }) ///// hover ///////////
+
+        // .btna 클릭시 (위에서 셋팅 이어짐!)
+        .click(function () {
+
+            // 광클막기! /////////////////
+            if (btna_sts) return false;
+            btna_sts = 1; //잠금
+            setTimeout(function () {
+                btna_sts = 0;
+                //1.5초(애니시간)후 해제
+            }, 1500); //// setTimeout ////
+
+            // 배너자동호출 지우기
+            clearAuto();
+
+            // 왼쪽버튼 여부(클래스 ar1으로 확인)
+            let isAR1 = $(this).is(".ar1");
+
+            if (isAR1) {
+                //console.log("난,왼쪽!");
+                goRight();
+            } ///// if문 ///////////
+            else {
+                //console.log("난,오른쪽!");
+                autoSlide();
+            } ///// else ////////////////
+
+
+        }); /////// click ////////////////////
+
+    // 버튼 광클릭막기 상태값
+    let btna_sts = 0; //1-막기,0-허용
 
 
 
